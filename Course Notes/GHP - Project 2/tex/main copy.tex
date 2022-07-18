@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}[legalpaper, portrait, margin = 1 in]
+
+\title{Generating Functions and Music}
+\author{Micah Burton and Edwin Trejo}
+\date{July 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+    This investigation aims to explore the ways in which the number of possible melodies with a set of given constraints can be calculated. We also hope to develop methods on actually constructing the melodies. THe different constraints will be applied by 
+    chanigng the definition of a "unique melody" and varying the freedome there is in musical aspects such as note range, rhythm availability, scale mode, etc. 
+
+\section{Generating Functions}
+    As mentioned in the introduction, one of the main methods of constructing these melodies will be through the use of generating functions, which are functions that encode sequences of numbers as the coefficients of terms in a function. 
+    They are power series, and do not have to converge. 
+
+\subsection{Example with Sums of 5} 
+If we want to find out how many ways there are of adding each integer from 1 to 5 such that the sum is a multiple of 5, we can try 
+
+\section{Construcing Melodies with Intervals}
+One of the most simple ways of defining and constructing melodies is using single-interval note changes and ignoring other factors such as rhythm. If we start at the note middle C and can move up or down a whole step for \(n-1\) note changes, it can be seen that 
+there are \(2^{n-1}\) different melodies we can construct. This is because at each note change, there is a binary choice made as to whether we move up or down a whole step for the next note. To build a generating function that generates the possible medodies, we can 
+represent going down a note with a \(x^{-1}\) and going up a note with a \(x\). Since each note change requires one note on each end and they can be tied together, the number of note changes there are is one less than the length of the melody. To represent the 
+choice between moving up and moving down for a melody that is \(n\) notes long, we have:
+\begin{equation}
+    \mbox{Melodies} = (x^{-1} + x)^(n-1)
+\end{equation}
+
+Expanding the function but not combining like terms gives a representation of the different ways the note changes can be ordered. For example, a 4-note melody where each note can only be one whole step higher or lower than the previous note can be mae in: \(2^{4-1} = 8\)
+different ways. To find these different ways, we can apply (1):
+\begin{align*}
+    (x^{-1} + x)^(4-1) & = (x^{-1} + x)^(3) = \\
+    & x^{-1} x^{-1} x^{-1} + x x^{-1} x^{-1} + x^{-1} x x^{-1} + x x x^{-1} + \\
+    & x^{-1} x^{-1} x + x x^{-1} x + x^{-1} x x + x x x
+\end{align*}
+
+
+\end{document}
