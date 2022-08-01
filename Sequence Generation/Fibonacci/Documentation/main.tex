@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}[legalpaper, portrait, margin=1in]
+
+\title{Explaining my Fibonacci Number Generators}
+\author{Edwin Trejo}
+\date{June 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+    This document aims to explain, in detail, the two basic fibonacci number generators I have written in python.
+I am writing this for 1\()\) posterity and 2\()\) I have no other way of applying the Feynman technique at the moment. 
+This document also assumes knowledge on what the fibonacci sequence is and how it is generated. I hope you enjoy!
+
+\section{The Recursive Method}
+
+The first generator I made generated the fibonacci numbers recursively as many times as the user wanted.
+It begins with a basic set up of the first two terms of the fibonacci sequence:
+\begin{verbatim*}
+x = 1
+y = 1
+seq = [x, y]
+\end{verbatim*}
+
+The setup is followed by the next_term\(()\) function which generates the next term, and appends it. 
+
+\begin{verbatim*}
+    def next_term():
+    z = seq[-2] + seq[-1]
+    seq.append(z)
+\end{verbatim*}
+
+\end{document}
