@@ -1,0 +1,136 @@
+\section{Sequences}
+An arithmetic sequence is a list of integers which can be represented by the formula:
+\[a_n = a_1 + (n - 1)d\] Where \(a_1\), \(d\) \(\in\) \(\mathbb{Z}\) and \(n\) \(\in\) \(\mathbb{Z}^+\)
+\newline
+Arithmetic sequences can also be represented by a function, \(f(x)\), where \(x\in\mathbb{Z}\)
+
+\section{Sequences and the Finite Difference}
+For a sequence represented by \(f(x)\) where \(x \in \mathbb{Z}^+\) and the first few terms are \[f(1), f(2), f(3), ...\]
+The difference between the first two terms is given by \[f(2) - f(1)\] 
+Similarly, the difference between the second pair of terms is given by \[f(3) - f(2)\]
+More generally, the \textbf{finite difference} of a sequence, \(f(x), x \in \mathbb{Z}^+\) is defined as
+\begin{equation} \label{eq:1}
+    \Delta f(x) = f(x + 1) - f(x)
+\end{equation}
+
+\textbf{Example}
+Find the formula for the following sequence and its finite difference: \[1,4,7,10,13,...\]
+
+\textbf{Solution} 
+The sequence is clearly linear and can be represented by the function \(f(x) = 1+3x\)
+Taking the finite difference of \(f\) gives
+\begin{align*}
+    \Delta f(x) & = (1+3(x+1)) - (1 + 3x) \\
+    & = 4+3x - 1+3x \\
+    & = 3
+\end{align*}
+
+\subsection{Connection to Calculus}
+Notice the similarity between the \textbf{derivative} of a function \(f(x)\): 
+\begin{equation} \label{eq:2}
+    \frac{dy}{dx} = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h}
+\end{equation}
+
+And the \textbf{finite difference} of a sequence, \(f(x)\): 
+\[\Delta f(x) = \frac{f(x+1) - f(x)}{1}\]
+
+In essence, the finite difference can be viewed as a more discrete version of the derivative. Or, the derivative can be thought of as a smoother version of the finite difference.
+
+
+\section{Falling Exponents}
+Another important concept in this subject is falling exponents. A falling exponent is defined as:
+\begin{equation}\label{eq:3}
+    a^{\underline{n}} = a(a-1)(a-2...(a-(n-1)))
+\end{equation}
+Notice how when \(a=n\), the falling exponent causes all integers from 1 to \(a\) to be multiplied together, which is equivalent to applying the factorial to \(a\)
+\[a! = a^{\underline{a}}\]
+Also notice that if \(n\) is a falling exponent applied to \(a\) and \(n>a\), one factor will be 0, therefore, the product is 0
+\[a^{\underline{n}} = a(a-1)...(a-a)...(a-(n-1)) - 0\]
+
+\section{Finite Derivatives of Functions with Falling Exponents}
+Taking the finite differnece of a sequence defined by a falling exponent simply requires applying (1) to the function
+
+\textbf{Example}
+Take the finite differences of the following:
+\begin{enumerate}
+    \item \(f(x) = x^{\underline{2}}\)
+    \item \(f(x) = x^{\underline{3}}\)
+    \item \(f(x) = 4x^{\underline{2}}\)
+\end{enumerate}
+
+\textbf{Solution}
+Applying (1) to each example gives
+\begin{enumerate}
+    \item \begin{align*}
+        \Delta f(x) & = (x+1)^{\underline{2}} - x^{\underline{2}} \\
+        & = (x+1)(x) - (x)(x-1) \\
+        & = x^2 + x - x^2 + x \\
+        & = 2x = 2x^{\underline{1}}
+    \end{align*}
+
+    \item \begin{align*}
+        \Delta f(x) & = (x+1)^{\underline{3}} - x^{\underline{3}} \\
+        & = (x+1)(x)(x-1) - (x)(x-1)(x-2) \\
+        & = (x)(x-1)(x+1-x+2) \\
+        & = 3x^{\underline{2}} 
+    \end{align*}
+
+    \item \begin{align*}
+        \Delta f(x) & = 4(x+1)^{\underline{2}} - 4x^{\underline{2}} \\
+        & = 4(x+1)(x) - 4(x)(x-1) \\
+        & = 4(x^2 + x - x^2 + x) \\
+        & = 8x = 8x^{\underline{1}}
+    \end{align*}
+\end{enumerate}
+
+\subsection{The Pattern}
+You may notice this pattern is similar to the power rule in calculus, and you would be right! This pattern holds true for all values of \(n\) for the falling exponent. 
+A proof of this is shown below:
+
+\section{Anti-Finite Difference}
+For a sequence, \(f(x)\), the anti-finite difference is analagous to the indefinite integral in calculus and is denoted by: 
+\[\Sigma f(x)\]
+Taking the anti-finite difference of a polynomial sequence can be done by reversing the power rule described in the previous section. 
+\textbf{Example} 
+Take the anti-finite difference of the follwing: \[f(x) = 3x^{\underline{2}} + 1\]
+\textbf{Solution}
+Reversing the power rule for each term above gives: 
+\begin{align*}
+    \Sigma f(x) & = \frac{3x^{\underline{2+1}}}{3} + \frac{x^{\underline{1}}}{1} \\
+    & = x^{\underline{3}} + x^{\underline{1}}
+\end{align*}
+
+\section{Determining a Formula for a given sequence}
+To determine the formula for a function using its sequence, start by taking differences until a function is obtained. Then, find the anti-finite difference repeatedly until the original sequence is reached
+
+\textbf{Example}
+Given the sequence: \[f(x) = 0,8,22,42,68,100\]
+Find a formula for the sequence
+
+\textbf{Solution}
+Taking the finite difference of each term in the sequence gives:
+\[\Delta f(x) = 8, 14, 20, 26, 32\]
+Taking the finite difference again gives:
+\[\Delta^2 f(x) = 6, 6, 6, 6\]
+
+Now we have a constant we can take the anti-finite difference of twice in order to obtain the original function. Taking the first anti-finite diference of \(\Delta^2 f(x) = 6\) gives:
+\begin{align*}
+    \Sigma(\Delta^2 f(x)) & = \Sigma 6 \\
+    & = 6x^{\underline{1}} + c = \Delta f(x)
+\end{align*}
+
+Where \(c\) is an unknown constant that may have been removed when taking the finite difference. Solving for \(c\) using the first term in \(\Delta f(x)\) gives:
+\begin{align*}
+    \Delta f(1) = 8 = 6(1)^{\underline{1}} + c \\
+    c = 2
+    \Delta f(x) = 6x^{\underline{1}} + 2
+\end{align*}
+
+Repeating this process once more gives the following: \[f(x) = 3x^{\underline{2}} + 2x^{\underline{1}} - 2\]
+COnverting this into a function with traditional exponents gives: 
+\begin{align*}
+    f(x) & = 3(x)(x-1) + 2x - 2 \\
+    & = 3x^2 - x - 2
+\end{align*}
+
+\section{Definite Finite Sums}
