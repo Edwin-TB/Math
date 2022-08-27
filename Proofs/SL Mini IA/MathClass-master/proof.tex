@@ -1,0 +1,254 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[legalpaper, portrait, margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\pgfplotsset{width=8cm,compat=1.9}
+
+\title{IB Math AA SL Investigation:\emph{Volumes of Cones}}
+\author{Edwin Trejo}
+\date{April 1, 2022}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item[a)]
+    \begin{itemize}
+        \item[i)] 
+        
+        Notice how the arc of the sector in figure 2 forms the base of the cone in figure 1. This implies that the arc length, \(s\) of the sector and circumference, \(c\), of the cone's base are equal, shown below. 
+        \begin{equation} \label{eq1}
+            s=c
+        \end{equation}
+        Replacing \(s\) with the arc length formula, \(s=r\theta\) and substituting the radius of figure 2, \(R\), for \(r\) into (1) gives:
+        \begin{equation} \label{eq2}
+            R\theta = c
+        \end{equation}
+        Substituting the circumference formula, \(c=2\pi r\) where \(r\) is the radius of the base of the cone, and substituting it into (2) gives:
+        \begin{equation} \label{eq3}
+            R\theta = 2\pi r
+        \end{equation}
+        Solving (3) for \(r\) gives 
+        \begin{equation} \label{eq4}
+            r=\frac{R\theta}{2\pi}
+        \end{equation}
+        Which proves the proposition in question (a)(i) to be true.
+        
+        \item[ii)]
+        
+        Observing figure 1, we see a right triangle is formed with one side being the radius of the base of the cone with length \(r\), another side being the height of the cone of length \(h\), and the hypotenuse being the edge of the cone whose length is the slant height of the cone. 
+        \newline
+        We also see that the lines \(\overline{AB}\) and \(\overline{BC}\) of length \(R\) become part of the lateral surface of the cone. Therefore, the slant height and hypotenuse's length is equal to \(R\). Applying the Pythagorean Theorem, \(a^2+b^2=c^2\), to the right triangle where \(a=r\), \(b=h\), and \(c=R\) gives: 
+        \begin{equation}
+            r^2+h^2=R^2
+        \end{equation}
+        Solving for \(h\) gives 
+        \begin{equation}
+            h=\sqrt{R^2-r^2}
+        \end{equation}
+        
+    \end{itemize}
+    \item[b)]
+    \begin{itemize}
+        \item[i)]
+        
+        Taking the formula for the volume of a cone, \(V=\pi r^2\frac{h}{3}\), and substituting (4) and (6) for \(r\) and \(h\) respectively gives:
+        \begin{equation}
+            V=\pi \left(\frac{R\theta}{2\pi}\right)^2\frac{\sqrt{R^2-r^2}}{3}
+        \end{equation}
+        Where another substitution of (4) for \(r\) can take place. 
+        \begin{equation}
+            V=\pi \left(\frac{R\theta}{2\pi}\right)^2\frac{\sqrt{R^2-\left(\frac{R\theta}{2\pi}\right)^2}}{3}
+        \end{equation}
+        Which simplifies to:
+        \begin{equation}
+            V=\frac{R^3\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}
+        \end{equation}
+        
+        \item[ii)]
+        
+        The length \(R\) cannot be less than 0 as this would give not make geometric sense when looking at the radius of figure 2 and the slant height of the cone in figure 1, neither length can be negative. The same applies to the degree \(\theta\) since a negative angle would not make geometric sense when observing figure 2, there needs to be SOME radius to form a  cone. Another constraint that applies to \(\theta\) is that it cannot equal or exceed \(2\pi\). If the angle were to equal this value, the piece of paper would simply form a circle and the lines \(\overline{AB}\) and \(\overline{BC}\) would not be able to be joined since they are the same line. If this value were exceeded, a cone would not be able to be formed by the resulting strip of paper. The possible values for each of these variables are given below:
+        \[\{R:R>0\}\ \ \{\theta:0<\theta<2\pi\}\]
+        
+    \end{itemize}
+    \item[c)]
+    \begin{itemize}
+        \item[i)]
+        Plugging \(R=1\) into (9) and treating \(V\) as a function of \(\theta\) gives: 
+        \begin{equation}
+
+            V(\theta)=\frac{\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}
+        \end{equation}
+        A graph of (10) is shown in figure 1.
+        \newline
+        
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+    axis lines = left,
+    xlabel = \(\theta\),
+    ylabel = {\(V\)},
+    xmin=0, xmax=8,
+    ymin=0, ymax=0.5,
+]
+                \addplot[
+    domain=0:8,
+    samples=7000, 
+    color=red,
+]{((x^2)*(sqrt(1-((x^2)/((2*pi)^2)))))/(12*pi)};
+                \end{axis}
+            \end{tikzpicture}
+            \newline
+            \textbf{Figure 1: Graph of \(V\) versus \(\theta\) for \(R=1\)}
+        \end{center}
+        
+        Plugging \(R=5\) into (9) and treating \(V\) as a function of \(\theta\) gives:  
+        \begin{equation}
+
+            V(\theta)=\frac{125\times\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}
+        \end{equation}
+        A graph of (11) is shown in figure 2.
+        \newline
+        
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+    axis lines = left,
+    xlabel = \(\theta\),
+    ylabel = {\(V\)},
+    xmin=0, xmax=8,
+    ymin=0, ymax=60,
+]
+                \addplot[
+    domain=0:8,
+    samples=7000, 
+    color=red,
+]{((125)*(x^2)*(sqrt(1-((x^2)/((2*pi)^2)))))/(12*pi)};
+                \end{axis}
+            \end{tikzpicture}
+            \newline
+            \textbf{Figure 2: Graph of \(V\) versus \(\theta\) for \(R=5\)}
+        \end{center}
+        
+        Plugging \(R=20\) into (9) and treating \(V\) as a function of \(\theta\) gives:  
+        \begin{equation}
+
+            V(\theta)=\frac{8000\times\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}
+        \end{equation}
+        A graph of (12) is shown in figure 3.
+        \newline
+        
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+    axis lines = left,
+    xlabel = \(\theta\),
+    ylabel = {\(V\)},
+    xmin=0, xmax=8,
+    ymin=0, ymax=4000,
+]
+                \addplot[
+    domain=0:8,
+    samples=7000, 
+    color=red,
+]{((8000)*(x^2)*(sqrt(1-((x^2)/((2*pi)^2)))))/(12*pi)};
+                \end{axis}
+            \end{tikzpicture}
+            \newline
+            \textbf{Figure 3: Graph of \(V\) versus \(\theta\) for \(R=20\)}
+        \end{center}
+        
+        It is correct that we graph \(\theta\) on the x-axis and \(V\) on the y-axis because we are graphing \(V\) VERSUS \(\theta\), thus we want to see how \(V\) changes with \(\theta\). This means that \(\theta\) is the independent variable, which is traditionally graphed on the x-axis, and \(V\) is the dependent variable, which is traditionally graphed on the y-axis.
+        
+        \item[ii)]
+        
+        Graphing software gives maximum point on the graph of (10) in figure 1 as (5.13,0.403), the maximum point on the graph of (11) in figure 2 as (5.13,252), and the maximum point on the graph of (12) in figure 3 as (5.13,64491)
+
+
+        
+    \end{itemize}
+    \item[d)]
+    \begin{itemize}
+        \item[i)]
+        
+        Once a value for \(R\) in (9) is chosen, it acts as a constant that can be factored out and rewritten as:
+        \begin{equation}
+            V=R^3\times\frac{\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}
+        \end{equation}
+        According to the constant multiple rule, a the derivative of a constant, \(c\) multiplied by a function, \(f(x)\) is equal to the constant times the derivative of the function, shown below. \[\frac{d}{dx}\left[c\times f(x)\right]=c\times f'(x)\]
+        Taking the derivative of (13) and leaving \(R^3\) as a constant gives:
+        \begin{equation}
+            \frac{dV}{d\theta}=R^3\times\frac{d}{d\theta}\left[\frac{\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}\right]
+        \end{equation}
+        
+        If the first derivative test for extrema were applied to (14), its second factor would have to equal 0 to find the point where the derivative crosses the x-axis. This is because anything else multiplied by \(R^3\) would not equal 0. Therefore, no matter the value of \(R\), the derivative of (9) will always equal 0 for the same value of \(\theta\) and (9) will always have a maximum for the same value of \(\theta\).
+        
+        \item[ii)]
+        The value of \(\theta\) for which (9) will have a local maximum is 5.1302 radians.
+        \newline Converting this to degrees using \(1\mbox{ rad}=\frac{180^\circ}{\pi\mbox{ rad}}\) gives \(293.94^\circ\)
+        
+    \end{itemize}
+    
+    
+    \item[e)]
+    The value stated in (d)(ii) can be found using the first derivative test. Taking the first derivative of (9) with respect to \(\theta\) and omitting \(R^3\) gives:
+    \[ \frac{d}{d\theta}\left[\frac{\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}\right]=\]
+    \begin{align*}
+        = \frac{1}{12\pi}\times\left(\left(\theta^2\times\frac{d}{d\theta}\left[ \sqrt{1-\frac{\theta^2}{4\pi^2}} \right] \right)+\left( \sqrt{1-\frac{\theta^2}{4\pi^2}}\times\frac{d}{d\theta}\left[ \theta^2 \right] \right)\right) \\
+        = \frac{1}{12\pi} \times \left(\frac{-\theta^3}{4\pi^2\sqrt{1-\frac{\theta^2}{4\pi^2}}} + 2\theta\sqrt{1-\frac{\theta^2}{4\pi^2}}\right) \\
+        = \frac{\theta\sqrt{1-\frac{\theta^2}{4\pi^2}}}{6\pi}-\frac{\theta^3}{48\pi^3\sqrt{1-\frac{\theta^2}{4\pi^2}}}\Rightarrow
+    \end{align*}
+    
+    \begin{equation}
+        \frac{dV}{d\theta}=\frac{\theta\sqrt{1-\frac{\theta^2}{4\pi^2}}}{6\pi}-\frac{\theta^3}{48\pi^3\sqrt{1-\frac{\theta^2}{4\pi^2}}}
+    \end{equation}
+    Setting (15) equal to 0 and solving for \(\theta\) gives:
+    \[0=\frac{\theta\sqrt{1-\frac{\theta^2}{4\pi^2}}}{6\pi}-\frac{\theta^3}{48\pi^3\sqrt{1-\frac{\theta^2}{4\pi^2}}}\Rightarrow\]
+    \begin{align*}
+        \frac{\theta\sqrt{1-\frac{\theta^2}{4\pi^2}}}{6\pi} = \frac{\theta^3}{48\pi^3\sqrt{1-\frac{\theta^2}{4\pi^2}}}\Rightarrow\\
+        \sqrt{1-\frac{\theta^2}{4\pi^2}} = \frac{\theta^2}{8\pi^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}\Rightarrow\\
+        8\pi^2\left(1-\frac{\theta^2}{4\pi^2}\right) = \theta^2\Rightarrow\\
+        8\pi^2=3\theta^2\Rightarrow\\
+        \frac{2\pi\sqrt{2}}{\sqrt{3}}=\theta\Rightarrow\\
+        \frac{2\pi\sqrt{6}}{3}=\theta
+    \end{align*}
+    \newpage
+    The sign diagram in figure 4 verifies that \(\frac{2\pi\sqrt{6}}{3}\) is a relative maximum of (9).
+    \begin{center}
+\begin{tabular}{ |c||c|c|c| } 
+ \hline
+ \(\theta\) & \(\frac{\pi\sqrt{6}}{3}\) & \(\frac{2\pi\sqrt{6}}{3}\) & \(\pi\sqrt{6}\) \\ 
+ \hline
+ \(\frac{dV}{d\theta}\) & (+) & 0 & (-) \\ 
+ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+    \textbf{Figure 4: Sign Diagram for (9) Centered Around \(\theta=\frac{2\pi\sqrt{6}}{3}\)}
+\end{center}
+Simplifying \(\theta=\frac{2\pi\sqrt{6}}{3}\) gives \(\theta5.1302...\) which proves the proposition in (e).
+\newline Converting \(\theta=\frac{2\pi\sqrt{6}}{3}\) using \(1\mbox{ rad}=\frac{180^\circ}{\pi\mbox{ rad}}\) gives \(\theta=120\sqrt{6}^\circ\).
+    
+    \item[f)]
+    In this example, I will be using (9) and ignoring \(R\) since, as stated above, it has no effect on the value of \(\theta\) for which a cone reaches its maximum volume. Defining the volume of the cone formed by the sector with angle \(\theta\) as \(V_1\) gives:
+    \begin{equation}
+        V_1=\frac{\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}
+    \end{equation}
+    When a sector is formed with an angle, \(\theta\), its conjugate sector has an angle of \(2\pi-\theta\). Defining the volume of the conjugate sector as \(V_2\) and plugging \(\theta=2\pi-\theta\) into (9) gives: 
+    \begin{equation}
+        V_2=\frac{(2\pi-\theta)^2\sqrt{1-\frac{(2\pi-\theta)^2}{4\pi^2}}}{12\pi}
+    \end{equation}
+    Finding the sum of \(V_1\) and \(V_2\) gives:
+        \[V_{\left(\mbox{Total}\right)}=V_1+V_2=\]
+        \begin{equation}
+            \frac{\theta^2\sqrt{1-\frac{\theta^2}{4\pi^2}}}{12\pi}+\frac{(2\pi-\theta)^2\sqrt{1-\frac{(2\pi-\theta)^2}{4\pi^2}}}{12\pi}
+        \end{equation}
+    
+    Graphing software gives two local maxima and one local minimum for the graph of (18). The local minimum is at \((\pi, 0.453)\) and the two local maxima are at \((2.04,0.457)\) and \((4.25,0.457)\). It is interesting to note that the two maxima are equal and their \(\theta\) values are equidistant from the minimum's \(\theta\) value. This is logical once one realizes the graph is symmetrical around \(\theta=\pi\). Defining cone \(\alpha\) as the cone whose sector angle is \(\theta\) and cone \(\beta\) as the cone whose sector angle is \(2\pi-\theta\), we see that cones \(\alpha\) and \(\beta\) have the same sector angle, and thus the same volume when \(\theta=\pi\). Increasing the sector angle of \(\alpha\) by some amount, \(\Phi\), causes the sector angle of \(\beta\) to decrease by \(\Phi\). Since the cones are identical in everything except sector angle, the net volume change associated with a change in \(\Phi\) is the same no matter its direction. This makes the graph of (18) symmetrical around maximum points equidistant from \(\theta=\pi\).
+    
+\end{itemize}
+\end{document}
