@@ -1,0 +1,97 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage[legalpaper, portrait, margin=1in]{geometry}
+\usepackage{amsthm}
+\setlength{\parindent}{0pt}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}
+
+\title{Two Quick Proofs as an Expression of Affection for Mathematics}
+\author{Edwin Trejo Balderas}
+\date{August 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\forceindent This document aims to offer a glimpse into the independent math work I do in my free time as, unfortunately, I do not believe the activities section on the WISE application offers me enough space to do that. 
+I also hope it serves as sufficient proof of my deep love for mathematics and interest in MIT's course 18.
+In this document, I prove that every positive even power of 2 is one more than a multiple of 3 and every positive odd power of 2 is one less than a multiple of 3 using mathematical induction. 
+I came up with the propositions presented by accident, simply wondering about the powers of 2 and the numbers near them, which is how many of my propositions originate. This creativity that math allows is what I mean when I say it is an art. 
+
+\section{Observations and Propositions}
+\forceindent The first few powers of 2 (starting at \(n=1\)) are shown below:
+\[a_n = 2^n = 2,4,8,16,32,64,\dots\]
+Notice how adding 1 to each of 2, 8, and 32 gives a multiple of 3:
+\[2 + 1 = 3 = 3(1)\]
+\[8 + 1 = 9 = 3(3)\]
+\[32 + 1 = 33 = 3(11)\]
+Also notice how 2, 8, and 32 are odd powers of 2:
+\[2 = 2^1, 8=2^3, 32=2^5\]
+
+From this, I propose this holds for all odd powers of 2:
+
+\begin{prop}
+    \[2^{2n-1} + 1 = 3(x) \mbox{ such that x is an integer for all } n = 1,2,3,\dots\]
+\end{prop}
+
+Alternatively, we notice how subtracting 1 from each of 4, 16, and 64 gives a multiple of 3:
+\[4 - 1 = 3 = 3(1)\]
+\[16 - 1 = 15 = 3(5)\]
+\[64 - 1 = 63 = 3(21)\]
+Also notice how 4, 16, and 64 are even powers of 2:
+\[4 = 2^2, 16=2^4, 64=2^6\]
+
+From this, I propose this holds for all odd powers of 2:
+
+\begin{prop}
+    \[2^{2n} - 1 = 3(x) \mbox{ such that x is an integer for all } n = 1,2,3,\dots\]
+\end{prop}
+
+\section{Proof of Proposition 1}
+To prove the following:
+\[2^{2n-1} + 1 = 3(x) \mbox{ such that x is an integer for all } n = 1,2,3,\dots\]
+We first must show it is true for the case where \(n=1\), indeed:
+\[2^{2(1)-1} + 1 = 2 + 1 = 3\]
+Now, assuming \(n=k\) for all \(k = 1,2,3,\dots\), we have:
+\[2^{2k-1} + 1 = 3(x) \mbox{ such that x is an integer for all } k = 1,2,3,\dots\]
+It follows that this is also true for all \(n=k+1\):
+\[2^{2(k+1)-1} + 1 = 3(x)\]
+\[2^{2(k+1)-1} + 1 = 2^{2k-1 + 2} + 1 = 2^2 2^{2k-1} + 1 = 4(2^{2k-1}) + 1 = 3(2^{2k-1}) + 2^{2k-1} + 1 \]
+From our assumption, we know that \(2^{2k-1} + 1\) is in fact a multiple of 3, so we can replace it with \(3m\) where \(m\) is some integer:
+\[3(2^{2k-1}) + 3m = 3(2^{2k-1} + m)\]
+Since both factors of 3 are integers, we have shown that the above expression is indeed a multiple of 3, and have proven proposition 1
+
+\section{Proof of Proposition 2}
+The proof of the second proposition, shown below, follows a very similar progression as the first.
+\[2^{2n} - 1 = 3(x) \mbox{ such that x is an integer for all } n = 1,2,3,\dots\]
+
+For \(n=1\), indeed:
+\[2^2 - 1 = 4-1 = 3\]
+Assuming \(n=k\) for all \(k = 1,2,3,\dots\), we have:
+\[2^{2k} - 1 = 3(x) \mbox{ such that x is an integer for all } k = 1,2,3,\dots\]
+It follows that this is also true for all \(n=k+1\):
+\[2^{2(k+1)} - 1 = 3(x)\]
+\[2^{2(k+1)} - 1 = 2^2 2^k -1 = 4(2^k)-1= 3(2^k) + 2^k-1 = 3(2^k) + 3m = 3(2^k+m)\]
+Thus proving proposition 2.
+
+\section{Bonus Proof}
+Since all even powers of 2, \(2^{2n}\), can be simplified to powers of 4, \(4^n\), we can see that, using the proof of proposition 2, the following holds:
+\[4^{n} - 1 = 3(x) \mbox{ such that x is an integer for all } n = 1,2,3,\dots\]
+
+\section{Extensions}
+Currently, I am working towards generalizing these two theorems to the rest of the integers, such as even/odd powers of 3 being 1 greater/less than multiples of 4, 
+or rather even/odd powers of \(n\) being 1 greater/less than multiples of \(n+1\). I am also working to see if this holds in reverse, where all even/odd powers of \(n\) could be 1 greater/less than multiples of \(n-1\).
+Thank you so much for reading! :)
+
+\end{document}
