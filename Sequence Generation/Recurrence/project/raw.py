@@ -1,9 +1,9 @@
 import numpy as np
 
-S = [1,1,1] # seed numbers
+S = [1,2] # seed numbers
 A = [] # array for the calculated first few terms of the sequence
 L = 10 # length of A
-C = [-1,1,-1] # coefficients of terms, ordered in descending power
+C = [-1,6] # coefficients of terms, ordered in descending power
 D = len(C)
 p = [1] # characteristic polynomial coefficient array, starts with 1 since that wil always be the coefficient of the highest degree, corresponding to the next entry in the sequence
 M = [] # matrix where roots of characteristic polynomial and their powers will be stored
@@ -35,6 +35,7 @@ Fc.append(f'({E[0]:0.3g})*({R[0]:0.3g})^n')
 for i in range(D-1):
     Fc.append(f' + ({E[i+1]:0.3g})*({R[i+1]:0.3g})^n')
 For = ''.join(Fc)
+
 """"
 print(p)
 print(R)
