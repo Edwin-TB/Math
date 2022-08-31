@@ -1,9 +1,9 @@
 import numpy as np
 
-S = [1,1] # seed numbers
+S = [1,1,1] # seed numbers
 A = [] # array for the calculated first few terms of the sequence
 L = 20 # length of A
-C = [1,1] # coefficients of terms, ordered in descending power
+C = [1,1,1] # coefficients of terms, ordered in descending power
 D = len(C)
 p = [1] # characteristic polynomial coefficient array, starts with 1 since that wil always be the coefficient of the highest degree, corresponding to the next entry in the sequence
 M = [] # matrix where roots of characteristic polynomial and their powers will be stored
@@ -15,8 +15,7 @@ for i in range (D):
 
 R = np.roots(p)
 rR = np.real(R)
-iR = np.imag(R)
-riR = iR * (-i)
+iR = np.imag(R) * (-i)
 
 for i in range(D):
     M.append([])
@@ -25,11 +24,10 @@ for i in range(D):
 
 E = np.linalg.solve(M, S)
 rE = np.real(E)
-iE = np.imag(E)
-riE = iE * (-i)
+iE = np.imag(E) * (-i)
 
 for i in range (D):
-    F.append(lambda x: E[i]*R[i]**x)
+    F.append(lambda x: E[i]*R[i]**x) ## The function!!!
 
 for j in range (L):
     t = 0
@@ -37,11 +35,25 @@ for j in range (L):
         t = t + F[i](j+1)
     A.append(np.round(t, 3))
 
-Fc.append(f'( {rE[0]:0.4g}+{riE[0]:0.4g}i )*( {rR[0]:0.4g}+{riR[0]:0.4g}i )^n')
-for i in range(D-1):
-    Fc.append(f' + ({rE[i+1]:0.4g} + {riE[i+1]:0.4g}i)*( {rR[i+1]:0.4g} + {riR[i+1]:0.4g}i )^n')
+if iR.all == 0:
+    Fc.append(f'({rE[0]:0.4g})*({rR[0]:0.4g})^n')
+    for i in range(D-1):
+        Fc.append(f' + ({rE[i+1]:0.4g})*({rR[i+1]:0.4g})^n')
+else:
+    if iR[0] == 0:
+        Fc.append(f'({rE[0]:0.4g})*({rR[0]:0.4g})^n')
+    else:
+        Fc.append(f'({rE[0]:0.4g} + {iE[0]:0.4g}i)*({rR[0]:0.4g} + {iR[0]:0.4g}i)^n')
+    for i in range(D-1):
+        if iR[i+1] == 0:
+            Fc.append(f' + ({rE[i+1]:0.4g})*({rR[i+1]:0.4g})^n')
+        else:
+            Fc.append(f' + ({rE[i+1]:0.4g} + {iE[i+1]:0.4g}i)*({rR[i+1]:0.4g} + {iR[i+1]:0.4g}i)^n')
+
+
 For = ''.join(Fc)
 print(A)
+print(R)
 
 """"
 print(p)
