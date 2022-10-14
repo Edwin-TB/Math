@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1665300810 "c:/Users/edwin/Desktop/Math/MIT research portfolio/main.tex" "main.pdf" "main" 1665300810
+["pdflatex"] 1665728370 "c:/Users/edwin/Desktop/Math/MIT research portfolio/main.tex" "main.pdf" "main" 1665728373
   "C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1664841685 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/edwin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1656078973 10326007 7c48915c59380244145321e9ff15d9af ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -173,12 +173,12 @@
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty" 1636713860 1618 786b14c5a3e144c3a51452d08232d18b ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636288472 56029 3f7889dab51d620aa43177c391b7b190 ""
   "c:/Users/edwin/Desktop/Math/MIT research portfolio/main.tex" 1664924155 1242 24e0ddd3cc4d9a94c8d428c62189dad6 ""
-  "complex.aux" 0 -1 0 "pdflatex"
+  "complex.aux" 1665728373 598 774806fef496138b260bebb0c9e40df9 "pdflatex"
   "complex.tex" 1665241401 728 cdfc520652735a403b60b74eddbb8278 ""
-  "main.aux" 1665300810 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.aux" 1665728373 432 b5ce98de4bac12281f6e417c98e88dc5 "pdflatex"
   "main.tex" 1664924155 1242 24e0ddd3cc4d9a94c8d428c62189dad6 ""
-  "powers.aux" 0 -1 0 "pdflatex"
-  "powers.tex" 1665300802 4343 570d19ef33af99bd0ec3ec6941812ad6 ""
+  "powers.aux" 1665728373 867 5cce4e53798ef31d90b9ba5ff4eeee37 "pdflatex"
+  "powers.tex" 1665728367 4314 ca99f7be59d9d09e6bbb5ec26621d994 ""
   (generated)
   "complex.aux"
   "main.aux"

@@ -558,6 +558,12 @@ INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend
 INPUT .\main.aux
 INPUT main.aux
 INPUT main.aux
+INPUT .\powers.aux
+INPUT powers.aux
+INPUT powers.aux
+INPUT .\complex.aux
+INPUT complex.aux
+INPUT complex.aux
 OUTPUT main.aux
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii

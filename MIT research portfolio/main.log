@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.24)  9 OCT 2022 03:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.24)  14 OCT 2022 02:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -386,7 +386,7 @@ with kernel methods
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count303
 \l__pdf_internal_box=\box65
-) (main.aux)
+) (main.aux (powers.aux) (complex.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -466,34 +466,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 
  (powers.tex [2
 
-]
-
-powers.tex:66: LaTeX Error: Environment proof undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.66 \begin{proof}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-powers.tex:74: LaTeX Error: \begin{document} ended by \end{proof}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 \end{proof}
-                
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-) [3]
+]) [3]
 \openout2 = `complex.aux'.
 
  (complex.tex) [4
@@ -505,10 +478,10 @@ or  <return>  to continue without it.
 
 ] (main.aux (powers.aux) (complex.aux)) ) 
 Here is how much of TeX's memory you used:
- 23777 strings out of 478354
- 629664 string characters out of 2837118
+ 23782 strings out of 478354
+ 629819 string characters out of 2837118
  1047396 words of memory out of 3000000
- 41797 multiletter control sequences out of 15000+600000
+ 41798 multiletter control sequences out of 15000+600000
  476033 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,6n,103p,774b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
