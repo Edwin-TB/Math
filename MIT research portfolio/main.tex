@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[legalpaper, portrait, margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{setspace}
+\usepackage{indentfirst}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\usepgfplotslibrary{external}
+\tikzexternalize
+\pgfplotsset{width=8cm,compat=1.9}
+\setlength{\parindent}{20pt}
+
+
+\title{MIT Research Supplement: A Collection of Mathematical Explorations}
+\author{Edwin Trejo Balderas}
+\date{November, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document aims to offer a glimpse into the independent mathematical work/exploration I do in my free time and substantiate my deep love for mathematics. While I do hope to present formal mathematics, the guiding text will also include some personal narration to illuminate my motivation and way of thinking aobut the math.
+
+\include{powers.tex}
+
+\include{complex.tex}
+
+\section{The Behavior of Generalized Fibonacci Sequences}
+
+\section{Counting Indices of Pascal's Simplex}
+
+\end{document}

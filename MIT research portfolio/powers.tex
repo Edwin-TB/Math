@@ -1,0 +1,82 @@
+\section{Even Powers, Odd Powers, and Modular Arithmetic}
+
+\subsection{Even powers of 2 and multiples of 3}
+As I explored the binary number system, I naturally familiarized myself with and memorized the first several powers of 2. As I reviewed the sequence in my head, I noticed that 16, $2^4$, is one more than 15. On its own this observation may not seem significant, but it becomes interesting when on considers that 4, $2^2$ is one more than 3.
+Since 3 and 15 are both multiples of 3, I began to wonder where else were there powers of 2 near a multiple of 3, and soon found that 64=$2^6$ is one more than 63, 256=$2^8$ is one more than 255, and so on. From these observations I made the following proposition.
+\begin{theorem}
+    Any positive, even power of 2 is one more than a multiple of 3. 
+    $$2^{2n}=3m+1;n,m\in\mbox{\textbf{Z}}^+$$
+\end{theorem}
+
+I knew I could not just claim the above to be true for all $n$, so I looked into methods of proof. After considering multiple methods of proof, I decided induction would be the most straighforward. 
+
+Proof: Indeed, for n=1:
+$$2^2=4=3+1$$
+Assuming the theorem holds for all n=k:
+$$2^{2k}=3m+1;k,m\in\mbox{\textbf{Z}}^+$$
+We proceed with the inductive step:
+$$2^{2(k+1)}=2^{2k+2}=4*2^{2k}$$
+From our assumption:
+$$4*2^{2k}=4*(3m+1)=3*(3m+1)+3m+1=3m+1$$
+For some integer $m$. Thus, by induction, we have proved (2.1) holds for all $n>0$.
+
+\subsection{Even powers of 2 and multiples of 3}
+After proposing (2.1), I wondered if there was a similar pattern for odd powers of 2, and I found there is! I saw that $2^1=2=3-1$, $2^3=8=9-1$, and so on. From this, I proposed the following:
+\begin{theorem}
+    Any positive, odd power of 2 is one less than a multiple of 3. 
+    $$2^{2n-1}=3m-1;n,m\in\mbox{\textbf{Z}}^+$$
+\end{theorem}
+
+Proof: Indeed, for n=1:
+$$2^1=2=3-1$$
+Assuming the theorem holds for all n=k:
+$$2^{2k-1}=3m+1;k,m\in\mbox{\textbf{Z}}^+$$
+We proceed with the inductive step:
+$$2^{2(k+1)-1}=2^{2k+1}=4*2^{2k-1}$$
+From our assumption:
+$$4*2^{2k-1}=4*(3m-1)=3*(3m-1)+3m-1=3m+1$$
+For some integer $m$. Thus, by induction, we have proved (2.2) holds for all $n>0$.
+
+While I was satisfied with my conclusion, I could not help but wonder if there was something 'deeper' to this property of even and odd powers of integers, so I looked at the powers of 3, and saw that $3^2=9=8+1$ and $3^3=27=28-1$, which hints towards a similar pattern between powers of 3 and multiples of 4. So I proposed the following:
+
+\begin{theorem}
+    Any positive, even power of some integer \mbox{p} is one more than a multiple of \mbox{p+1}. 
+    $$p^{2n}=(p+1)m+1;p,n,m\in\mbox{\textbf{Z}}^+$$
+\end{theorem}
+
+\begin{theorem}
+    Any positive, odd power of some integer \mbox{p} is one less than a multiple of \mbox{p+1}. 
+    $$p^{2n-1}=(p+1)m-1;p,n,m\in\mbox{\textbf{Z}}^+$$
+\end{theorem}
+
+I considered proving these by induction as well, but I knew there had to be a better way. As I left the problem to simmer in my head, I continued exploring the beauty of mathematics and came across modular arithmetic from an abstract algebra book i was self-studying from. I soon realized that it could be used to prove (2.3) and (2.4) very succinctly.
+\begin{theorem}
+    Let \mbox{p} be some positive integer, then the following holds:
+    $$p^n\mod{(p+1)}=(-1)^n$$
+\end{theorem}
+Proof: An integer p can be represented as:
+$$p\mod{(p+1)}=-1$$
+Using the multiplication property of modular arithmetic:
+$$(x\mod{a})*(y\mod{a})=(x*y)\mod{a}$$
+It follows that 
+$$x^n\mod{a}=(x\mod{a})*(x\mod{a})*\dots*(x\mod{a})=(x\mod{a})^n$$
+Thus 
+$$p^n\mod{(p+1)}=(p\mod{(p+1)})^n=(-1)^n$$
+
+\begin{proof} 
+Taking the modulus of both sides of the expression with respect to (p+1) gives:
+$$(p^{2n})\mod{(p+1)}=((p+1)m+1)\mod{(p+1)}$$
+From (2.5), we have:
+$$(p^{2n})\mod{(p+1)}=(-1)^{2n}=1$$
+And for the right side, we have:
+$$((p+1)m+1)\mod{(p+1)}=((p+1)m)\mod{(p+1)}+(1)\mod{(p+1)}=0+1=1$$
+Thus, (2.3) holds.
+\end{proof}
+
+Proof of (2.4): Taking the modulus of both sides of the expression with respect to (p+1) gives:
+$$(p^{2n+1})\mod{(p+1)}=((p+1)m+1)\mod{(p+1)}$$
+From (2.5), we have:
+$$(p^{2n+1})\mod{(p+1)}=(-1)^{2n+1}=-1$$
+And for the right side, we have:
+$$((p+1)m-1)\mod{(p+1)}=((p+1)m)\mod{(p+1)}+(-1)\mod{(p+1)}=0-1=-1$$
+Thus, (2.4) holds.

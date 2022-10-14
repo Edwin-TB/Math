@@ -1,0 +1,121 @@
+\documentclass[11pt]{exam}
+
+\usepackage{amsmath} % allows for align environment
+\usepackage{amssymb} % 
+\usepackage{array} % for table alignments
+
+% FONT FORMAT
+% \renewcommand*\rmdefault{ppl} % change font to Palatino
+\renewcommand*\rmdefault{lmss} % change font to lat mod ss
+
+% ADJUST MARGINS
+\usepackage[bmargin=1.0in]{geometry}
+\geometry{margin=1in}
+\geometry{tmargin=1in}
+
+\begin{document}
+
+\begin{center}
+    \Large MATH 1554 QH \\[2pt] Written Assignment 1\\Edwin Trejo Balderas
+\end{center}
+\thispagestyle{empty} % suppress page numbering
+
+    Please \textbf{show your work} for each of the questions below.
+
+\begin{questions}
+
+    \question[5] An economy consists of three sectors, L, M, and P. 
+    \begin{itemize}
+        \item For every 100 units L produces, L consumes 80\%, M consumes 0\%, and P consumes 0\%. 
+        \item For every 100 units M produces, L consumes 10\%, M consumes 60\%, and P consumes 0\%. 
+        \item For every 100 units P produces, L consumes 0\%, M consumes 10\%, and P consumes 40\%. 
+    \end{itemize}
+
+    \begin{parts}
+        \part Construct the consumption matrix, $C$, for this economy. 
+        \newline \textbf{Response:}
+        The percentage of units from each sector that L consumes for every unit it produces are shown, in percentage form, in the column below:
+        $$\vec{c_L}=\begin{pmatrix} 0.8\\0\\0\end{pmatrix}$$
+        Doing the same for sectors M and P gives:
+        $$\vec{c_M}=\begin{pmatrix} 0.1\\0.6\\0\end{pmatrix}; \vec{c_P}=\begin{pmatrix} 0\\0.1\\0.4\end{pmatrix}$$
+        Combining these consumption vectors into a consumption matrix, $C$, gives:
+        $$C=\begin{pmatrix} \vec c_L&\vec c_M& \vec c_P\end{pmatrix}=\begin{pmatrix} 0.8&0.1&0\\0&0.6&0.1\\0&0&0.4\end{pmatrix}$$
+
+        \part There is an external demand of 5 units of L, 10 units of M, and 12 units of P. Use your matrix from part (a) to construct a linear system, that when solved, would give the production level, $\vec x$, that would satisfy the given demand given the internal consumption between sectors. The entries of $\vec x$ should be the following.
+        $$\vec x = \begin{pmatrix} x_L\\x_M\\x_P\end{pmatrix}$$
+        In other words, the first entry of $\vec x$ should give the number of units that L produces, the second entry is $x_M$ which is the number of units that M produces, and $x_P$ is the number of units that P produces. 
+        \newline \textbf{Response:}
+        Plugging $C$ into the Leontief Input-Output model gives:
+        $$(I-C)X=D\Rightarrow \left( \begin{pmatrix} 1&0&0\\0&1&0\\0&0&1\end{pmatrix} - \begin{pmatrix} 0.8&0.1&0\\0&0.6&0.1\\0&0&0.4\end{pmatrix}\right)\vec{x}=\begin{pmatrix} 0.2&-0.1&0\\0&0.4&-0.1\\0&0&0.6\end{pmatrix} \begin{pmatrix} x_L\\x_M\\x_P\end{pmatrix}$$
+        Where $D$ is the external demand, given by: $$D = \begin{pmatrix} 5\\10\\12\end{pmatrix}$$
+        So, our complete model is:
+        $$\begin{pmatrix} 0.2&-0.1&0\\0&0.4&-0.1\\0&0&0.6\end{pmatrix} \begin{pmatrix} x_L\\x_M\\x_P\end{pmatrix}=\begin{pmatrix} 5\\10\\12\end{pmatrix}$$ 
+        
+        \part Solve your linear system from part (b). Clearly state the values L, M, and P that would be required. 
+        \newline \textbf{Response:}
+        Representing our model with the augmented matrix $A$ gives:
+        $$A=\begin{pmatrix} 0.2&-0.1&0&5\\0&0.4&-0.1&10\\0&0&0.6&12\end{pmatrix}$$ 
+        Performing row operations to solve reduce the matrix to RREF gives:
+        $$A=\begin{pmatrix} 0.2&-0.1&0&5\\0&0.4&-0.1&10\\0&0&0.6&12\end{pmatrix} \sim \begin{pmatrix} 2&-1&0&50\\0&4&-1&100\\0&0&6&120\end{pmatrix} \sim \begin{pmatrix} 2&-1&0&50\\0&4&-1&100\\0&0&1&20\end{pmatrix}$$
+        $$\sim \begin{pmatrix} 2&-1&0&50\\0&4&0&120\\0&0&1&20\end{pmatrix} \sim \begin{pmatrix} 2&-1&0&50\\0&1&0&30\\0&0&1&20\end{pmatrix} \sim \begin{pmatrix} 2&0&0&80\\0&1&0&30\\0&0&1&20\end{pmatrix} \sim \begin{pmatrix} 1&0&0&40\\0&1&0&30\\0&0&1&20\end{pmatrix}$$ 
+        This translates to the following system:
+        $$x_L=40;x_M=30;x_P=20$$ 
+        Therefore, 40 units of L, 30 units of M, and 20 units of P are needed to exactly meet the external demand.
+
+
+    \end{parts}
+    
+    \newpage
+
+
+    \question[4] Triangle $S$ is determined by the data points, $P(1,1), Q(3,1), R(1,2)$. Transform $T$ reflects points through the line $x = 3$. 
+    \begin{parts}
+        \part Represent the three data points with a matrix, $D$. Use homogeneous coordinates. 
+        \newline \textbf{Response:}
+        Converting each point to homogenous coordinates of the form $(x,y,1)$ gives:
+        $$P=(1,1,1);Q=(3,1,1);R=(1,2,1)$$
+        Converting these coordinates to a matrix where the first row holds the x-coordinates, the second row holds the y-coordinates, the third row holds the added coordinates, and each column holds the coordinates of a vertex, gives the matrix $D$:
+        $$D=\begin{pmatrix} 1&3&1\\1&1&2\\1&1&1 \end{pmatrix}$$
+        \part Construct the standard matrix $A$, so that $T_A(\vec x)=A\vec x$ reflects points through the given line. Use homogeneous coordinates. Express $A$ as a single $3\times 3$ matrix. 
+        \newline \textbf{Response:}
+        A reflection over the x-axis is required to perform the reflection over the desired line, $x=3$. However, this reflection would also reflect the line over the x-axis to $x=-3$, thus a translation up 6 units is required to move the line back to its original place. The reflection can be done with the following matrix:
+        $$B=\begin{pmatrix} 1&0&0\\0&-1&0\\0&0&1 \end{pmatrix}$$ Which maintains each x-coordinate, reflects each y-coordinate, and maintains each added coordinate. The translation up can be done with the following matrix:
+        $$C=\begin{pmatrix} 1&0&0\\0&1&6\\0&0&1 \end{pmatrix}$$ Which is of the form 
+        $$\begin{pmatrix} 1&0&h\\0&1&k\\0&0&1 \end{pmatrix}\begin{pmatrix} x\\y\\1 \end{pmatrix}= \begin{pmatrix} x+h\\y+k\\1 \end{pmatrix}$$
+        Since we are applying both the reflection and translation, we can multiply the matrices together to obtain one matrix that performs both transformations. Since we translate after reflecting, we multiply the translation to the left of the reflection, shown below:
+        $$CB=\begin{pmatrix} 1&0&0\\0&1&6\\0&0&1 \end{pmatrix}\begin{pmatrix} 1&0&0\\0&-1&0\\0&0&1 \end{pmatrix}=\begin{pmatrix} 1&0&0\\0&-1&6\\0&0&1 \end{pmatrix}=A$$
+        \part Use matrix multiplication to determine the image of $S$ under $T$. 
+        \newline \textbf{Response:}
+        Performing the matrix multiplication $AD$ gives:
+        $$AD=\begin{pmatrix} 1&0&0\\0&-1&6\\0&0&1 \end{pmatrix}\begin{pmatrix} 1&3&1\\1&1&2\\1&1&1 \end{pmatrix}=\begin{pmatrix} 1&3&1\\5&5&4\\1&1&1 \end{pmatrix}$$
+        \part Clearly state the coordinates of the triangle after the transformation. 
+        Since $AD$ stores the coordinates of point in the same way $D$ does, we can obtain the new coordinates of each vertex as:
+        $$P'=(1,5);Q'=(3,5);R'=(1,4)$$
+    \end{parts}
+
+    \newpage
+
+    \question[1] There are two parts to this question 
+    \begin{parts}
+        \part Please state your name, facilitator, and high school (in case we need to get in contact with them for any reason). Your facilitator is someone at your high school. 
+        \newline \textbf{Response:} Name: Edwin Trejo Balderas; Facilitator: LaRosa Johnson; School: Douglas County High School
+    \part Please ensure that you follow the instructions below. 
+    \begin{enumerate}
+        % \item your scan is under 5 MB in file size
+        \item Your work is legible in the files you uploaded. 
+        \item Questions are answered in the order in which they were given. 
+        \item During the upload process you indicated which pages correspond to which question.
+        \item During the upload process that none of your pages are upside down or sideways. 
+        \item Each question is answered on its own page (or pages). 
+        \item Your work is submitted as a single PDF file.
+    \end{enumerate}
+    Note that you can also change the orientation of the pages when you upload in Gradescope. Ensuring that these criteria are met helps ensure that your work is graded efficiently and accurately. 
+    
+    \end{parts}
+    
+
+    
+\end{questions}
+
+
+\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.24)  25 AUG 2022 08:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.24)  9 OCT 2022 03:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -8,8 +8,8 @@ entering extended mode
 LaTeX2e <2022-06-01> pre-release-0 (develop 2022-6-24 branch)
 L3 programming layer <2022-06-02> (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
-File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -360,7 +360,13 @@ File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.external.code.tex (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer/libraries\tikzlibraryexternal.code.tex (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+))) (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+\c@theorem=\count302
+ (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.external.code.tex (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer/libraries\tikzlibraryexternal.code.tex (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
  (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
@@ -378,25 +384,25 @@ with kernel methods
 
  (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count302
+\l__color_backend_stack_int=\count303
 \l__pdf_internal_box=\box65
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -417,12 +423,12 @@ LaTeX Font Info:    ... okay on input line 14.
 * \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -434,16 +440,16 @@ LaTeX Font Info:    ... okay on input line 14.
 
 (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
+\scratchcounter=\count304
 \scratchdimen=\dimen278
 \scratchbox=\box66
-\nofMPsegments=\count304
-\nofMParguments=\count305
+\nofMPsegments=\count305
+\nofMParguments=\count306
 \everyMPshowfont=\toks41
-\MPscratchCnt=\count306
+\MPscratchCnt=\count307
 \MPscratchDim=\dimen279
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
+\MPnumerator=\count308
+\makeMPintoPDFobject=\count309
 \everyMPtoPDFconversion=\toks42
 ) (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -455,19 +461,24 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 
 [1
 
-{C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.aux) ) 
+{C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (1.17738pt too wide) in paragraph at lines 71--72
+[]\OT1/cmr/m/it/10.95 A lin-ear ho-moge-nous re-cur-rence
+ []
+
+[2] [3] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 23625 strings out of 478354
- 625746 string characters out of 2837118
- 1036356 words of memory out of 3000000
- 41666 multiletter control sequences out of 15000+600000
- 473315 words of font info for 42 fonts, out of 8000000 for 9000
+ 23726 strings out of 478354
+ 628018 string characters out of 2837118
+ 1046396 words of memory out of 3000000
+ 41755 multiletter control sequences out of 15000+600000
+ 476380 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,103p,765b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (1 page, 47958 bytes).
+ 99i,10n,103p,1187b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (3 pages, 168810 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

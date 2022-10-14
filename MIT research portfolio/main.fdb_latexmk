@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1665301114 "c:/Users/edwin/Desktop/Math/IB IA/main.tex" "main.pdf" "main" 1665301117
+["pdflatex"] 1665300810 "c:/Users/edwin/Desktop/Math/MIT research portfolio/main.tex" "main.pdf" "main" 1665300810
   "C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1664841685 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/edwin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1656078973 10326007 7c48915c59380244145321e9ff15d9af ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -21,7 +21,6 @@
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1247596667 36554 b67dc2cfa451409e100b3fcf5f506509 ""
@@ -34,7 +33,6 @@
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
-  "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1247596667 36118 fad905eba93cff5bce1e185fe980a177 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580393758 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1644000708 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty" 1644000708 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -174,11 +172,17 @@
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324297677 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty" 1636713860 1618 786b14c5a3e144c3a51452d08232d18b ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636288472 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "c:/Users/edwin/Desktop/Math/IB IA/main.tex" 1665301108 6071 15bf7125a2f2914e49a4ac4b46504a86 ""
-  "main.aux" 1665301117 637 532c67ecd7b03fe28746d3ddc849eee4 "pdflatex"
-  "main.tex" 1665301108 6071 15bf7125a2f2914e49a4ac4b46504a86 ""
+  "c:/Users/edwin/Desktop/Math/MIT research portfolio/main.tex" 1664924155 1242 24e0ddd3cc4d9a94c8d428c62189dad6 ""
+  "complex.aux" 0 -1 0 "pdflatex"
+  "complex.tex" 1665241401 728 cdfc520652735a403b60b74eddbb8278 ""
+  "main.aux" 1665300810 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.tex" 1664924155 1242 24e0ddd3cc4d9a94c8d428c62189dad6 ""
+  "powers.aux" 0 -1 0 "pdflatex"
+  "powers.tex" 1665300802 4343 570d19ef33af99bd0ec3ec6941812ad6 ""
   (generated)
+  "complex.aux"
   "main.aux"
   "main.auxlock"
   "main.log"
   "main.pdf"
+  "powers.aux"
