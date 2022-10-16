@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.24)  14 OCT 2022 02:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.24)  14 OCT 2022 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/edwin/Desktop/Math/MIT research portfolio/main.tex"
-(c:/Users/edwin/Desktop/Math/MIT research portfolio/main.tex
+**c:/Users/edwin/Desktop/Math/MIT/main.tex
+(c:/Users/edwin/Desktop/Math/MIT/main.tex
 LaTeX2e <2022-06-01> pre-release-0 (develop 2022-6-24 branch)
 L3 programming layer <2022-06-02> (C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -386,7 +386,7 @@ with kernel methods
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count303
 \l__pdf_internal_box=\box65
-) (main.aux (powers.aux) (complex.aux))
+) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -462,33 +462,39 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 [1
 
 {C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-\openout2 = `powers.aux'.
+Overfull \hbox (42.61693pt too wide) detected at line 132
+[]
+ []
 
- (powers.tex [2
+[2]
 
-]) [3]
-\openout2 = `complex.aux'.
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 162.
 
- (complex.tex) [4
+<./images//image.jpg, id=24, 4047.12pt x 3035.34pt>
+File: ./images//image.jpg Graphic file (type jpg)
+<use ./images//image.jpg>
+Package pdftex.def Info: ./images//image.jpg  used on input line 180.
+(pdftex.def)             Requested size: 485.63345pt x 364.22508pt.
 
+Overfull \hbox (15.87843pt too wide) in paragraph at lines 180--181
+ [] 
+ []
 
-
-] [5
-
-
-] (main.aux (powers.aux) (complex.aux)) ) 
+[3 <./images//image.jpg>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 23782 strings out of 478354
- 629819 string characters out of 2837118
- 1047396 words of memory out of 3000000
- 41798 multiletter control sequences out of 15000+600000
- 476033 words of font info for 51 fonts, out of 8000000 for 9000
+ 23739 strings out of 478354
+ 628232 string characters out of 2837118
+ 1059397 words of memory out of 3000000
+ 41763 multiletter control sequences out of 15000+600000
+ 476347 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,103p,774b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (5 pages, 157857 bytes).
+ 99i,16n,103p,753b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (3 pages, 2445224 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

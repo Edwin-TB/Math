@@ -55,7 +55,7 @@ I considered proving these by induction as well, but I knew there had to be a be
     $$p^n\mod{(p+1)}=(-1)^n$$
 \end{theorem}
 Proof: An integer p can be represented as:
-$$p\mod{(p+1)}=-1$$
+$$(p)\mod{(p+1)}=-1$$
 Using the multiplication property of modular arithmetic:
 $$(x\mod{a})*(y\mod{a})=(x*y)\mod{a}$$
 It follows that 
@@ -63,12 +63,12 @@ $$x^n\mod{a}=(x\mod{a})*(x\mod{a})*\dots*(x\mod{a})=(x\mod{a})^n$$
 Thus 
 $$p^n\mod{(p+1)}=(p\mod{(p+1)})^n=(-1)^n$$
 
-Taking the modulus of both sides of the expression with respect to (p+1) gives:
+Proof of (2.3): Taking the modulus of both sides of the expression with respect to (p+1) gives:
 $$(p^{2n})\mod{(p+1)}=((p+1)m+1)\mod{(p+1)}$$
 From (2.5), we have:
 $$(p^{2n})\mod{(p+1)}=(-1)^{2n}=1$$
 And for the right side, we have:
-$$((p+1)m+1)\mod{(p+1)}=((p+1)m)\mod{(p+1)}+(1)\mod{(p+1)}=0+1=1$$
+$$((p+1)m+1)\mod{(p+1)}=((p+1)m\mod{(p+1)})+(1\mod{(p+1)})=0+1=1$$
 Thus, (2.3) holds.
 
 Proof of (2.4): Taking the modulus of both sides of the expression with respect to (p+1) gives:
@@ -76,5 +76,5 @@ $$(p^{2n+1})\mod{(p+1)}=((p+1)m+1)\mod{(p+1)}$$
 From (2.5), we have:
 $$(p^{2n+1})\mod{(p+1)}=(-1)^{2n+1}=-1$$
 And for the right side, we have:
-$$((p+1)m-1)\mod{(p+1)}=((p+1)m)\mod{(p+1)}+(-1)\mod{(p+1)}=0-1=-1$$
+$$((p+1)m-1)\mod{(p+1)}=((p+1)m\mod{(p+1)})+(-1\mod{(p+1)})=0-1=-1$$
 Thus, (2.4) holds.
