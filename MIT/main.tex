@@ -29,7 +29,7 @@
 \section{Introduction}
 This document aims to offer a glimpse into the independent mathematical research/exploration I do in my free time and substantiate my deep love for mathematics. For brevity, I only present the major results of my explorations with some commentary on motivation and/or applications.
 
-\section{Even and Odd Powers and Modular Arithmetic}
+\section{Powers and Modular Arithmetic}
 
 (2.1) and (2.2) come from long-standing personal observations after thinking about the powers of 2 with reference to their use in computer binary. When I first learned how to do proofs by induction, these were the first two personal theorems I proved.
 
@@ -61,6 +61,16 @@ This document aims to offer a glimpse into the independent mathematical research
     Any positive, odd power of some integer \mbox{p} is one less than a multiple of \mbox{p+1}. 
     $$p^{2n-1}=(p+1)m-1;p,n,m\in\mbox{\textbf{Z}}^+$$
 \end{theorem}
+
+(2.6) came from the same observation as (2.1) and (2.2), but did not fully flesh itself out until I had a sudden spark of inspiration, grabbed a pen and paper, and left the match of Tetris I was playing to frantically put everything down. 
+
+\begin{theorem}
+    For all integer bases, b, the following holds:
+    $$b^n=(b-1)(b^0+b^1+\dots+b^{n-1})+1,;b,n\in\mbox{\textbf{Z}}^+$$
+\end{theorem}
+
+Examples where $b\in\mbox{\textbf{R}}^+$ seem to hold true, and I am currently working on a proof for that.
+
 
 \section{The Behavior of the Generalized Fibonacci Sequence}
 

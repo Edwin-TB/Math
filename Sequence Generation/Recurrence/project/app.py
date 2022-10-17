@@ -68,6 +68,6 @@ for i in range(6):
     ratio = str(np.round(generate_formula(S, C)[0][0], 12))
     r = ratio.translate({ord(i): None for i in '()+j'})[:-1]
     print(r)
-    print(generate_formula(S, C)[-1])
+    # print(generate_formula(S, C)[-1])
 
 # print(f'The explicit formula for these seed numbers and recurrence coefficients is: \n a_n = {For}')
