@@ -37,7 +37,7 @@ This past summer, my mathematical abilities developed greatly and I learned how 
 
 \section{Aim and Methodology}
 
-In this investigation, I aim to determine the behavior of generalized n-nacci sequences by finding the ratios they approach, which I will call their ‘limiting ratio’ as the index approaches infinity and finding explicit formulas for their recursive relationships. I will first investigate these properties of the fibonacci sequence, using algebra to show that their limiting ratio is indeed the golden ratio and methods similar to those used to find solutions of homogeneous differential equations to find binet’s formula. I will then define n-nacci sequences and try to extend methods to these new sequences. I will use computer code to simplify the process of finding explicit formulas and generating high indexes of these formulas to postulate their limiting ratios. I will then use geometric sum formulas to prove these ratios, and derive the ratio that appears when infinitely many previous terms are added. Ultimately, I will use my observations to determine a relationship between finite and infinite geometric sums when the final sum is held constant but the amount of terms added varies. 
+In this investigation, I aim to determine the behavior of generalized m-nacci sequences by finding the ratios they approach, which I will call their '\textbf{limiting ratio}’ as the index of the sequence approaches infinity and finding explicit formulas for their recursive relationships. I will first investigate these properties of the fibonacci sequence, using algebra to show that its limiting ratio is indeed the golden ratio and methods similar to those used to find solutions of homogeneous differential equations to find Binet’s Formula. I will then define n-nacci sequences and try to extend methods to these new sequences. I will use computer code to simplify the process of finding explicit formulas and generating high indexes of these formulas to postulate their limiting ratios. I will then use geometric sum formulas to prove these ratios, and derive the ratio that appears when infinitely many previous terms are added. 
 
 \noindent Commonly used symbols are summarized in the table below:
 
@@ -65,10 +65,10 @@ In this investigation, I aim to determine the behavior of generalized n-nacci se
 \end{center}
 \end{table}
 
-\section{Linear Homogenous Recurrence Relations}
-A few fundamental definitions are given below. The first two come from Bozlee (2017), and the third from a course in sequences and series I took over the summer before my senior year.
+\section{Relevant Mathematical Background}
+A few fundamental definitions are given below. (3.1) and (3.2) come from Bozlee (2017), and (3.3) comes from a course in sequences and series I took over the summer before my senior year.
 
-\begin{definition}[Linear Homogenous Recurrence Relation] A linear homogenous recurrence relation (also called a linear recurrence) of degree \mbox{k}, is a recurrence relation of the form:
+\begin{definition}[Linear Homogenous Recurrence Relation] A linear homogenous recurrence relation (which I will call a \textbf{linear recurrence}) of degree \mbox{k}, is a recurrence relation of the form:
     $$a_n=c_1a_{n-1}+c_2a_{n-2}+\dots +c_ka_{n-k}; c_1,c_2,\dots,c_k\in \mbox{\textbf{C}}$$ 
     With initial terms: 
     $$a_1,a_2,\dots,a_k\in\mbox{\textbf{C}}$$
@@ -83,11 +83,87 @@ A few fundamental definitions are given below. The first two come from Bozlee (2
     Where \mbox{$\lambda_1,\lambda_2,\dots,\lambda_k$} are the roots of the characteristic polynomial
 \end{definition}
 
-\doublespacing
-\subsection{Worked Example}
-As an example, we can determine the explicit form of the following linear recurrence:
-$$a_n=4a_{n-1}-3a_{n-2}$$
+\begin{definition}[Ratio] The ratio between terms of a linear recurrence, $a_n$, is:
+    $$r=\frac{a_n}{a_{n-1}}$$
+    Note that the ratio can also be used as a successor operator to give the next term in a recurrence 
+    $$r=\frac{a_n}{a_{n-1}}=\frac{a_{n+1}}{a_{n}}\Rightarrow r a_n=a_{n+1}\Rightarrow r^k a_n=a_{n+k}$$
+\end{definition}
+
+Two more definitions that are particularly important to this exploration are 
+\begin{definition}[m-nacci Sequence] An m-nacci sequence is a linear recurrence whose coefficients all equal 1:
+    $$a_n=a_{n-1}+a_{n-2}+\dots +a_{n-k}$$ 
+    With initial terms: 
+    $$a_0,a_1,\dots,a_{k-2}=0;a_{k-1}=1$$
+\end{definition}
+
+\begin{definition}[Limiting Ratio] The limiting ratio of a linear recurrence, $a_n$, is the limit of its ratio as its index approaches $\infty$:
+    $$\Phi=\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}$$
+\end{definition}
+
+\subsection{Method for Deriving the Explicit Formula of a Linear Recurrence}
+The method I learned for deriving the explicit formula of a linear recurrence, $a_n$ is outlined below.
+\begin{enumerate}
+    \item Determine the characteristic polynomial of $a_n$, $f(\lambda)$
+    \item Determine the roots of $f(\lambda)$, $\lambda_1,\lambda_2,\dots,\lambda_k$
+    \item Use the roots of $f(\lambda)$ as the bases of the explicit form of $a_n$
+    \item Use the first $k$ terms of $a_n$ to setup a system of equations
+    \begin{align*}
+        a_1 &= d_1\lambda_1^1+d_2\lambda_2^1+\dots+d_k\lambda_k^1 \\
+        a_2 &= d_1\lambda_1^2+d_2\lambda_2^2+\dots+d_k\lambda_k^2 \\
+        &\vdots \\ 
+        a_k &= d_1\lambda_1^k+d_2\lambda_2^k+\dots+d_k\lambda_k^k
+    \end{align*}
+
+    \item Solve the system for the coefficients $d_1,d_2,\dots,d_k$ and use them in the explicit form
+\end{enumerate}
+
+\subsection{Method for Deriving the Limiting Ratio of a Linear Recurrence}
+The method described below is one I independently developed and after going through some of the sequences and series course and the course instructor suported. It aims to determine the Limiting Ratio of a linear recurrence and is outlined below.
+\begin{enumerate}
+    \item Express $a_n$ in terms of its lowest-index term and powers of its ratio 
+    \begin{align*}
+        a_n=c_1a_{n-1}+c_2a_{n-2}+\dots +c_ka_{n-k} \\
+        a_{n+k}=c_1a_{n+k-1}+c_2a_{n+k-2}+\dots +c_ka_{n} \\
+        r^{k}a_{n}=c_1r^{k-1}a_{n}+c_2r^{k-2}a_{n-2}+\dots +c_ka_{n} \\
+    \end{align*}
+    \item Factor out $a_n$ and set the expression equal to 0
+    \begin{align*}
+        r^{k}=c_1r^{k-1}+c_2r^{k-2}+\dots +c_k \\
+        r^{k}-c_1r^{k-1}-c_2r^{k-2}-\dots -c_k=0
+    \end{align*}
+    Note how this is analagous to the characteristic polynomial of $a_n$
+    \item Solve for the roots, $r$, 
+    \item The root that is the limiting ratio will be the root with the highest magnitude. This is because when the roots are used in the explicit form of $a_n$, the root with the highest magnitude will become the 'dominant' root and successive terms will become more dependent on it. 
+\end{enumerate}
+
+
+\section{The Explicit Form and Limiting Ratio of the Fibonacci Sequence}
+As an example, we can determine the explicit form of the Fibonacci Sequence, the second-degree m-nacci sequence:
+$$F_n=F_{n-1}+F_{n-2}; F_0=0, F_1=1$$
 Which has the following characteristic polynomial:
-$$\lambda^2-4\lambda+3$$
+$$\lambda^2-\lambda-1$$
+With roots
+$$\lambda_1=\frac{1+\sqrt{5}}{2},\lambda_2=\frac{1-\sqrt{5}}{2}$$
+Which gives the following explicit form
+$$F_n=d_1\left(\frac{1+\sqrt{5}}{2}\right)^n+d_2\left(\frac{1-\sqrt{5}}{2}\right)^n$$
+This gives the following system:
+\begin{align*}
+    F_0&=0=d_1\left(\frac{1+\sqrt{5}}{2}\right)^0+d_2\left(\frac{1-\sqrt{5}}{2}\right)^0 = d_1+d_2 \\
+    F_1&=1=d_1\left(\frac{1+\sqrt{5}}{2}\right)^1+d_2\left(\frac{1-\sqrt{5}}{2}\right)^1 = d_1\frac{1+\sqrt{5}}{2}+d_2\frac{1-\sqrt{5}}{2}
+\end{align*}
+Solving gives 
+\begin{align*}
+    0 &= d_1+d_2 \Rightarrow d_1=-d_2\\
+    1 &= d_1\frac{1+\sqrt{5}}{2}+d_2\frac{1-\sqrt{5}}{2} = -d_2\frac{1+\sqrt{5}}{2}+d_2\frac{1-\sqrt{5}}{2}= d_2\left(\frac{-1-\sqrt{5}+1-\sqrt{5}}{2}\right)= d_2\left(\frac{-2\sqrt{5}}{2}\right) \\
+    1 &= -\sqrt{5}d_2\Rightarrow d_2=-\frac{1}{\sqrt{5}} \Rightarrow d_1=\frac{1}{\sqrt{5}}
+\end{align*}
+Thus the explicit form of the Fibonacci Sequence is
+$$F_n=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n$$
+Which is indeed Binet's formula for the Fibonacci Sequence.
+It is also important to note that the hightest-magnitude root of the characteristic polynomial of the Fibonacci Sequence is $\frac{1+\sqrt{5}}{2}$, which is indeed the Golden Ratio. This root has a greater magnitude than the other, and thus becomes dominant as the index approaches infinity. Furthermore, in this case, the second root's magnitude is less than 1, so it approaches 0 as the index increases.  
+
+\section{Extending to the Tribonacci Sequence}
+We can use the same methods to find the explicit form and limiting ratio of the tribonacci sequence, the third-degree m-nacci sequence
+$$T_n=T_{n-1}+T_{n-2}+T_{n-3};T_0=T_1=0, T_2=1$$
 
 \end{document}
