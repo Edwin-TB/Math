@@ -1,6 +1,6 @@
-PWD c:\Users\edwin\Desktop\code\Math\MIT
+PWD c:\Users\edwin\Desktop\Math\MIT
 INPUT C:\Users\edwin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\edwin\Desktop\code\Math\MIT\main.tex
+INPUT c:\Users\edwin\Desktop\Math\MIT\main.tex
 OUTPUT main.log
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -293,10 +293,6 @@ INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
 INPUT C:\Users\edwin\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex

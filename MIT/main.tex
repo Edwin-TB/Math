@@ -83,7 +83,7 @@ For my IB Math Analysis Internal Assessment, I am studying the behavior of m-nac
 
 \begin{definition}
 An m-nacci sequence is a recursive sequence of the form:
-$$F^{(m)}_n=F^{(m)}_{n-1}+F^{(m)}_{n-2}+\dots+F^{(m)}_{n-m}$$
+$$F^{(m)}_n=F^{(m)}_{n-1}+F^{(m)}_{n-2}+\dots+F^{(m)}_{n-m}=\sum_{i=1}^m F^{(m)}_{n-i}$$
 \end{definition}
 
 \begin{remark}
@@ -135,15 +135,15 @@ I use (3.3) in my Internal Assessment to serve as motivation for the constructio
     \end{bmatrix}
     \end{align*}
     is 
-    $$t^m-t^{m-1}-t^{m-2}-\dots-t-1$$
+    $$t^m-t^{m-1}-t^{m-2}-\dots-t-1=t^m-\sum_{i=1}^m t^{m-i}$$
 \end{theorem}
 
 (3.4) came from an observation I made on the positive, real roots (which I will refer to as the 'leading root') of the characteristic polynomials from (3.3) which are used as bases for the explicit formulas mentioned above. Only the leading roots had a modulus greater than 1 and thus they become predominant as high indices of a sequence are determined. Furthermore, the leading roots approached but never reached 2, so I attempted and succeeded to prove that the limit of the leading root approaches as the degree of an m-nacci sequence approached infinity is 2.
 For evidence, the explicit formulas for m-nacci sequences of degree 3, 4, and 5, determined by my algorithm, are given below with their leading roots in bold-face:
 \begin{align*}
-    F^{(3)}_n &= (0.0994)(\textbf{1.839})^n + (0.45 - 0.161i)(-0.42 + 0.606i)^n + (0.45 + 0.161i)*(-0.420 - 0.606i)^n \\
-    F^{(4)}_n &= (0.041)*(\textbf{1.93})^n + (0.272 - 0.174i)*(-0.0764 + 0.815i)^n + (0.272 + 0.174i)*(-0.0764 - 0.815i)^n + \\ & (0.415)*(-0.775)^n \\
-    F^{(5)}_n &= (0.0183)*(\textbf{1.97})^n + (0.171 - 0.152i)*(0.195 + 0.849i)^n + (0.171 + 0.152i)*(0.195 - 0.849i)^n + \\ & (0.32 - 0.0794i)*(-0.678 + 0.459i)^n + (0.32 + 0.0794i)*(-0.678 - 0.459i)^n
+    F^{(3)}_n &= (0.0994)(\textbf{1.839})^n + (0.45 - 0.161i)(-0.42 + 0.606i)^n + (0.45 + 0.161i)(-0.420 - 0.606i)^n \\
+    F^{(4)}_n &= (0.041)(\textbf{1.93})^n + (0.272 - 0.174i)(-0.0764 + 0.815i)^n + (0.272 + 0.174i)(-0.0764 - 0.815i)^n + \\ & (0.415)(-0.775)^n \\
+    F^{(5)}_n &= (0.0183)(\textbf{1.97})^n + (0.171 - 0.152i)(0.195 + 0.849i)^n + (0.171 + 0.152i)(0.195 - 0.849i)^n + \\ & (0.32 - 0.0794i)(-0.678 + 0.459i)^n + (0.32 + 0.0794i)(-0.678 - 0.459i)^n
 \end{align*}
 
 \begin{theorem}
@@ -159,11 +159,11 @@ I developed (4.1) to confirm that the explicit formulas for my Internal Assessme
 
 \begin{theorem}
     The sum of the product of a set of complex numbers and the product of the set of conjugates is a real number:
-    $$z_1*z_2*\dots*z_n+\bar{z_1}*\bar{z_2}*\dots*\bar{z_n}=2R\cos{(\Phi)}$$
+    $$z_1z_2\dots z_n+\bar{z_1}\bar{z_2}\dots\bar{z_n}=\prod_{i=1}^n z_i+\prod_{i=1}^n \bar{z_i}=2R\cos{(\Phi)}$$
     Where
     $$z_j=a_j+ib_j;z_j\in\mbox{\textbf{C}};a_j,b_j\in\mbox{\textbf{R}}$$
     $$r_j=\sqrt{a_j^2+b_j^2};\theta_j=\tan^{-1}{\left(\frac{b_j}{a_j}\right)}$$
-    $$R=r_1*r_2*\dots*r_n;\Phi=\theta_1+\theta_2+\dots+\theta_n$$
+    $$R=r_1r_2\dots r_n=\prod_{i=1}^n r_i;\Phi=\theta_1+\theta_2+\dots+\theta_n=\sum_{i=1}^n$$
 \end{theorem}
 
 \section{Pascal's Simplex}
@@ -187,6 +187,16 @@ Notice how using $m=3$ in (5.1) gives the formula for the tetrahedral numbers. I
     Which evaluates to:
     $$\frac{{(r+m-1)}^{\underline{m-1}}}{(m-1)!}={{r+m-1} \choose {m-1}};r,m\in\mbox{\textbf{Z}}^+$$
 \end{theorem}
+
+\section{A First Look into Real Analysis}
+During the first semester of my senior year, I began self-studying real analysis and after playing with proofs with definitions, I proved the generalize triangle inequality using an induction technique similar to that used to prove (4.1).
+\begin{theorem}
+    For all $x_i\in\mbox{\textbf{R}}$, the following holds.
+    \[|x_1+x_2+\dots+x_n|\leq |x_1|+|x_2|+\dots+|x_n|\Rightarrow |\sum_{i=1}^n x_i|\leq \sum_{i=1}^n |x_i|\]
+    Analysis is fun and by far one of my favorite fields of math to date. I am currently working on a proof that shows this holds for all complex numbers as well. 
+\end{theorem}
+
+\newpage
 
 \section{Where it All Happens}
 As I mentioned previously in the portfolio, this work takes place in a notebook that has at this point become a part of my daily life. So here I present, the book! The image below shows it open to rudimentary work leading to (3.3) (left) and a personal attempt at generalizing the representation of quadratic forms with matrices (right)
