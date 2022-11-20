@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1667178623 "c:/Users/edwin/Desktop/code/Math/MIT/main.tex" "main.pdf" "main" 1667178624
+["pdflatex"] 1667349291 "c:/Users/edwin/Desktop/code/Math/MIT/main.tex" "main.pdf" "main" 1667349293
   "C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1665971051 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/edwin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1665971047 10788011 9ea5a4a4f23cb79a804ec207e8262916 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -177,10 +177,10 @@
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324297677 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty" 1654690828 1618 6f0598aa81f9ba5cf5d393b4abd3e091 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/edwin/Desktop/code/Math/MIT/main.tex" 1667178621 11014 aacf35c33b83f8f828d5b65ec462a03f ""
+  "c:/Users/edwin/Desktop/code/Math/MIT/main.tex" 1667349290 11055 49b484b4a61f45287789664c7092ebab ""
   "images//image.jpg" 1665950501 2237479 db64ed4d6d343fe00544d5b59ab5dd6a ""
-  "main.aux" 1667178624 857 281314035f20644dfd1436f1b896d8a9 "pdflatex"
-  "main.tex" 1667178621 11014 aacf35c33b83f8f828d5b65ec462a03f ""
+  "main.aux" 1667349293 857 281314035f20644dfd1436f1b896d8a9 "pdflatex"
+  "main.tex" 1667349290 11055 49b484b4a61f45287789664c7092ebab ""
   (generated)
   "main.aux"
   "main.auxlock"
