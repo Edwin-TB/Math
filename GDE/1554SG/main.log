@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.16)  20 NOV 2022 12:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.16)  25 NOV 2022 20:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,19 +464,24 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 
 [1
 
-{C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.aux) ) 
+{C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6]
+Overfull \hbox (4.12576pt too wide) in paragraph at lines 381--382
+[]\OT1/cmr/m/n/10 ROW OP-ER-A-TIONS CHANGE EIGEN-VAL-UES $\OMS/cmsy/m/n/10 !$ \OT1/cmr/m/n/10 RE-DUCED MA-TRI-CES CAN-NOT HAVE THEIR
+ []
+
+[7] [8] [9] [10] [11] [12] [13] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 23728 strings out of 475385
- 628416 string characters out of 2776906
- 1078486 words of memory out of 3000000
- 44725 multiletter control sequences out of 15000+600000
- 472968 words of font info for 41 fonts, out of 8000000 for 9000
+ 23751 strings out of 475385
+ 628682 string characters out of 2776906
+ 1101486 words of memory out of 3000000
+ 44740 multiletter control sequences out of 15000+600000
+ 476563 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,103p,765b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (1 page, 32429 bytes).
+ 99i,9n,103p,765b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\edwin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (13 pages, 250984 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
+ 133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,12 +19,641 @@
 \setlength{\parindent}{20pt}
 
 
-\title{GTDE LinAlg }
+\title{GTDE LinAlg Study Guide}
 \author{Edwin Trejo Balderas}
 \date{December, 2022}
 
 \begin{document}
 
 \maketitle
+
+This living document is a study guide for all the content I learned in Georgia Tech course MATH 1554. It aims to not only present theorems but include their proofs and some major implications, as well as further notes clarifying practice exam questions where necessary.
+
+\section{Module 1 - Linear Equations}
+
+\subsection{Systems of linear equations}
+\begin{itemize}
+    \item Linear eq - \(a_1x_1+a_2x_2+\dots +a_nx_n=b\)
+    \begin{itemize}
+        \item has coeffs (\(a,b\)), vars (\(x\)), and dimension (\(n\))
+    \end{itemize}
+    \item Linear system - more than one lin-eq 
+    \item Solution set - all possible values of \(x_1,x_2,\dots,x_n\) that satisfy the system
+    \item Solution - a point in the solution set 
+    \item Solution sets can be empty, have one element, or be infinitely large 
+    \item Row operations - 
+    \begin{itemize}
+        \item Addition
+        \item Interchange 
+        \item Scale
+    \end{itemize}
+    \item Systems can be written as an augmented matrix - 
+    \[\begin{pmatrix} a_{1,1}&a_{1,2}&\dots&a_{1,n}&b_1 \\ 
+        a_{2,1}&a_{2,2}&\dots&a_{2,n}&b_2 \\ 
+        \vdots&\vdots&\ddots&\dots&\vdots \\ 
+        a_{m,1}&a_{m,2}&\dots&a_{m,n}&b_m\end{pmatrix}\]
+    \item Consistent - describes a system w/ at least one solution 
+    \item Row Equivalent - Describes matrices that can be transformed into each other via row operations
+    \item Row equivalence \(\Leftrightarrow\) same solution set 
+\end{itemize}
+
+\subsection{Row Reduction and Echelon Form}
+\begin{itemize}
+    \item Requirements for Echelon Form 
+    \begin{itemize}
+        \item All zero rows at bottom 
+        \item Leading entry of a row is to the right of all leading entries above
+        \item All entries below a leading entry are zero
+    \end{itemize}
+    \item Requirements for Reduced Row Echelon Form
+    \begin{itemize}
+        \item Those of echelon form 
+        \item All leading entries = 1
+        \item leading entries are the only non-zero entry in their column
+    \end{itemize}
+    \item Pivot position - position in a matrix that corresponds to a leading 1 in RREF
+    \item Pivot column - contains a pivot position
+    \item Row Reduction Alg - 
+    \begin{itemize}
+        \item Swap if necessary to make leftmost non-zero entry in first row
+        \item Scale row 1 so that leading entry is 1
+        \item Make appropriate row replacements to make all entries below leading entry 0
+        \item repeat 2 and 3 for all remaining rows 
+    \end{itemize}
+    \item Basic variable - variable corresponding to a pivot 
+    \item Free variable - variable that is not basic 
+    \item Existence + Uniqueness - Consistent iff last column of augmented matrix has no pivot
+    \item Unique solution if no free var, infinitely many otherwise
+\end{itemize}
+
+\subsection{Vector Equations}
+\begin{itemize}
+    \item linear combination - vector \(\vec{y}\) is a lin comb of \(v_1,v_2,\dots , v_p\) if can be written as 
+    \[\vec{y}=c_1v_1+c_2v_2+\dots+c_pv_p\] Where \(c_i\) are weights
+    \item Span - all linear combinations of a set of vectors, including 0
+\end{itemize}
+
+\subsection{The Matrix Equation}
+\begin{itemize}
+    \item Matrix times a vector - a linear combination of the matrix's columns with the vector as their weights
+    \item \(A\vec{x}\) - span of columns of \(A\)
+    \item \(A\vec{x}=\vec{b}\) only has solution if \(\vec{b}\) is a lin comb of vec of \(A\)
+\end{itemize}
+
+\subsection{Solution sets of lineat systems}
+\begin{itemize}
+    \item Systems of the form \(A\vec{x}=0\) are homogenous
+    \item If \(\vec{b}\neq 0\) then inhomogenous
+    \item Trivial solution to a homogenous system - \(\vec{0}\)
+    \item Big question is if homogenous system has non-trivial sol 
+    \item \(A\vec{x}=\vec{0}\) has a nontrivial solution \(\Leftrightarrow\) there is a free var \(\Leftrightarrow\) \(A\) has a column with no pivot
+    \item Parametric vector form - way of representing solution set with a vector equation that represents relationships between free and basic variables 
+\end{itemize}
+
+\subsection{Linear Independence}
+\begin{itemize}
+    \item Lin Indep iff \[c_1v_1+c_2v_2+\dots+ckv_k=\begin{pmatrix} v_1&v_2&\dots^v_k \end{pmatrix}\begin{pmatrix} c_1\\c_2\\\dots\\c_k \end{pmatrix}=0\] 
+    has only trivial solution
+    \item If a set of vectors contains \(\vec{0}\) then they are linearly dependent
+    \item If we have \(k\) vectors in \(\textbf{R}^n\) and \(k>n\) then the vectors are linearly dependent
+    \begin{itemize}
+        \item Every vector in \(A=\begin{pmatrix} v_1&v_2&\dots&v_k \end{pmatrix}\) has to be pivotal for vectors to be linearly independent
+        \item But more vectors than elements \(\rightarrow\) not all vectors can have a pivot position \(\rightarrow\) there will be some free variables 
+    \end{itemize}
+\end{itemize}
+
+\subsection{Intro to Linear Transforms}
+\begin{itemize}
+    \item Matrix transformation - Let \(A\in\textbf{R}^{m\times n}\), then we define \[T:\textbf{R}^n\rightarrow\textbf{R}^m, T(\vec{x})=A\vec{x}\]
+    \begin{itemize}
+        \item Domain of \(T\) is \(\textbf{R}^n\)
+        \item Dodomain of \(T\) is \(\textbf{R}^m\)
+        \item \(T(\vec{x})\) is image of \(\vec{x}\) under \(T\)
+        \item Range of \(T\) is all possible images \(T(\vec{x})\)
+    \end{itemize}
+    \item Ways of representing \(A\vec{x}=\vec{b}\)
+    \begin{itemize}
+        \item linear equations 
+        \item augmented matrix 
+        \item matrix eq 
+        \item vector eq 
+        \item linear transofrmation eq
+    \end{itemize}
+    \item Principle of superposition states that if \(T\) is linear then \[T(c_1v_2+c_2v_2+\dots+c_kv_k)=c_1T(v_1)+c_2T(v_2)+\dots+c_kT(v_k)\]
+    \item Every matrix tranformation is linear
+\end{itemize}
+
+\subsection{Linear Transforms}
+\begin{itemize}
+    \item Standard vectors in \(\textbf{R}^n\) are \(\vec{e_1},\vec{e_2},\dots,\vec{e_n}\) where 
+    \[\vec{e_1}=\begin{pmatrix} 1\\0\\0\\\dots\\0\end{pmatrix},\vec{e_2}=\begin{pmatrix} 0\\1\\0\\\dots\\0\end{pmatrix},\dots,\vec{e_n}=\begin{pmatrix} 0\\0\\0\\\dots\\1\end{pmatrix} \]
+    \item For \(A\in\textbf{R}^{m\times n}\) with columns (\(\vec{v_1},\vec{v_2},\dots,\vec{v_n}\))
+    \[A\vec{e_i}=\vec{v_i}\]
+    \item For linear transformation \(T:\textbf{R}^n\rightarrow\textbf{R}^m\), there is a unique matrix \(A\) where \[T(\vec{x})=A\vec{x}\] called the standard matrix
+    \item Note that \(A=\begin{pmatrix} T(\vec{e_1}) & T(\vec{e_2}) & \dots & T(\vec{e_n}) \end{pmatrix}\)
+    \item Rotation Matrix - \(\begin{pmatrix} \cos{\theta}& -\sin{\theta} \\ \sin{\theta}&\cos{\theta}\end{pmatrix}\)
+    \item Reflection through n-axis - negate all values except n 
+    \item Reflection through \(x_2=x_1\) - \(\begin{pmatrix} 0&1 \\ 1&0 \end{pmatrix}\)
+    \item Horizontal stretching - \(\begin{pmatrix} k&0 \\ 0&1 \end{pmatrix}\)
+    \item Vertical stretching - \(\begin{pmatrix} 1&0 \\ 0&k \end{pmatrix}\)
+    \item If \(T:\textbf{R}^n\rightarrow\textbf{R}^m\) for all \(\vec{b}\in \mbox{\textbf{R}}^m\) has a \(\vec{x}\in \mbox{\textbf{R}}^n\) then it is onto 
+    \item If a transformation is onto, it is always consistent
+    \item Existence property, applies if every row is pivotal, and/or if \(A\)'s columns span \(\textbf{R}^m\)
+    \item If \(T:\textbf{R}^n\rightarrow\textbf{R}^m\) for all \(\vec{b}\in \mbox{\textbf{R}}^m\) has at most one \(\vec{x}\in \mbox{\textbf{R}}^n\) then it is one-to-one 
+    \item If a transformation is one-to-one, it always has one or no solutions, and has linearly independent columns
+    \item Uniqueness property, applies if every column is pivotal
+\end{itemize}
+
+\section{Module 2 - Matrix Algebra}
+
+\subsection{Matrix Operations}
+\begin{itemize}
+    \item Definitions of addition and scalar multiplication to be added if demand arises 
+    \item For matrix multiplication, number of columns of right = number of rows of left 
+    \item Each column of product = (left)(column of right)
+    \item \(AB=(A\vec{b_1},A\vec{b_2},\dots,A\vec{b_p})\)
+    \item Matrix multiplication is:
+    \begin{itemize}
+        \item Associative 
+        \item Distributive 
+        \item Has an Identity
+        \item NOT commutative
+        \item NOT cancellable
+        \item HAS 0 divisors
+        \item Equivalent to a composition of linear transforms
+    \end{itemize}
+    \item Transpose of a matrix - matrix \(A^T\) whose rows are the columns of \(A\)
+    \item Properties
+    \begin{itemize}
+        \item \((A^T)^T=A\)
+        \item \((A+B)^T=A^T+B^T\)
+        \item \((rA)^T=rA^T\)
+        \item \((AB)^T=B^TA^T\)
+    \end{itemize}
+    \item Power of a matrix - \(A^n=AA\dots A\) n times
+\end{itemize}
+
+\subsection{Inverse of a Matrix}
+\begin{itemize}
+    \item A matrix \(A\) is invertible if there is a matrix \(B\) such that \[AB=BA=I\] Then we denote \(B\) as \(A^{-1}\)
+    \item Singular - describes a non-invertable matrix
+    \item A matrix is invertable iff it is both onto and one-to-one 
+    \item Algorithm
+    \begin{itemize}
+        \item Row reduce the augmented \((A|I_n)\) to RREF 
+        \item If RREF has form \((I_n|B)\) then \(A^{-1}=B\), if not, \(A\) is singular 
+        \item Alternatively, solving \(A\vec{x_i}=\vec{e_i}\) for all elementary vectors gives the columns of \(A^{-1}\)
+    \end{itemize}
+    \item Inverse properties
+    \begin{itemize}
+        \item \((A^{-1})^{-1}=A\)
+        \item \((AB)^{-1}=B^{-1}A^{-1}\)
+        \item \((A^T)^{-1}=(A^{-1})^T\)
+    \end{itemize}
+    \item Elementary matrix - one that differs from \(I_n\) by one row operation 
+    \item Each operation can be represented w/ an elementary matrix multiplication 
+    \item \(A\) is invertible iff it is row equivalent to the identity 
+\end{itemize}
+
+\subsection{Invertible Matrices}
+\begin{itemize}
+    \item Current equivalences in invertible matrix theorem 
+    \begin{itemize}
+        \item A is invertible
+        \item A is row equivalent to \(I_N\)
+        \item All columns are pivotal 
+        \item \(A\vec{x}=\vec{0}\) has only the trivial solution 
+        \item The columns of A are linearly independent 
+        \item \(A\vec{x}=\vec{b}\) has a solution for all \(\vec{b}\in \textbf{R}^n\)
+        \item Columns of A span \(\textbf{R}^n\)
+        \item \(A\) has a left or right inverse 
+        \item \(A^T\) is invertible 
+    \end{itemize}
+\end{itemize}
+
+\subsection{Partitioned Matrices}
+\begin{itemize}
+    \item Matrices can be partitioned into sub-matrices with varying dimensions 
+    \item Can be used to simplify multiplication if important matrices are found (e.g. \(I_n, 0\))
+    \item To find inverse of partitioned matrix, construct partitioned identity and form system of equations for each term in multiplication 
+\end{itemize}
+
+\subsection{LU Factorization}
+\begin{itemize}
+    \item LU Fact. - decomposes a matrix into a product
+    \item Upper triangular matrix - One where everything below the main diagonal is 0 (\(a_{i,j}=0 for all i>j\))
+    \item Lower triangular matrix - One where everything above the main diagonal is 0 (\(a_{i,j}=0 for all j>i\))
+    \item If A can be row reduced to echelon form without row exchanges, then \(A=LU\) where \(L\) is an \(m\times m\) lower triangular with 1 in main diagonal, and \(U\) is an echelon form of \(A\)
+    \item To solve \(A\vec{x}=\vec{b}\) with \(A=LU\)
+    \begin{itemize}
+        \item Find \(LU\) decomp of \(A\) 
+        \item Set \(U\vec{x}=\vec{y}\) and solve \(L\vec{y}=\vec{b}\)
+        \item Solve \(U\vec{x}=\vec{y}\)
+    \end{itemize}
+    \item To compute \(A=LU\)
+    \begin{itemize}
+        \item Note that if \(A\) is \(LU\) factorizable, it can be row reduced to \(U\) w/o interchanging rows, so 
+        \[E_p\dots E_1A=U=L^{-1}A=U\]
+        Where \(E_j\) is row operations that are NOT exchanging rows, so all are lower triangular and invertible 
+        \item So \[L^{-1}=E_p\dots E_1\Rightarrow L=E_1^{-1}\dots E_p^{-1}\]
+        \item SO the process is to row reduce \(A\) to \(U\) and reverse the order of applied row operations to find \(L\)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Leontif IO Model}
+\begin{itemize}
+    \item An economy with \(N\) sectors can have its output measured by \(\vec{x}\in \textbf{R}^n\)
+    \item Consumption Matrix - \(C\), describes how units are consumed by sectors to produce output 
+    \item Method 1 of defining entries of \(C\) - sector \(i\) sends some output to sector \(j\), call it \(c_{i,j}x_i\)
+    \item Method 2 of defining entries of \(C\) - sector \(i\) needs some output of sector \(i\), call it \(c_{i,j}x_i\)
+    \item \(C\vec{x}=\) units consumed
+    \item \(\vec{x}-C\vec{x}=\) units left after internal consumption 
+    \item There is also external demand, \(\vec{d}\), we ask if there is an \(\vec{x}\) that satisfies \[\vec{x}-C\vec{x}=(I-C)\vec{x}=\vec{d}\] Which is the Leontif IO model 
+\end{itemize}
+
+\subsection{Computer Graphics}
+\begin{itemize}
+    \item Homogenous coordinates in \(\textbf{R}^3\) - Points \(x,y\) in \(\textbf{R}^2\) can be represented with \((x,y,H)\) where \(H\neq 0\) which lies on the plane in \(\textbf{R}^3\) above the base plane 
+    \item Often, we set \(H=1\)
+    \item Matreix eq for a translation \((x,y\rightarrow (x+h,y+k))\) - \[\begin{pmatrix} 1&0&h\\0&1&k\\0&0&1 \end{pmatrix} \begin{pmatrix} x\\y\\1 \end{pmatrix}=\begin{pmatrix} x+h\\y+k\\1 \end{pmatrix}\]
+    \item Multiple points are stored as multiples columns in the right matrix
+    \item To rotate points around a specific coord,
+    \begin{itemize}
+        \item Translate points to the origin 
+        \item Rotate 
+        \item Translate back to original position
+    \end{itemize}
+    \item 4d homogenous coords can be used for translations of 3d points similar to above 
+    \item 3d rotations around an axis alter everything in the other two axes
+\end{itemize}
+
+\subsection{Subspaces of \(\textbf{R}^n\)}
+\begin{itemize}
+    \item Subspace - a subset that is closed under scalar multiplication and vector addition, and HAS THE 0 VECTOR 
+    \item ex - is \(\{\begin{pmatrix} a\\b \end{pmatrix}\in \textbf{R}^2 | ab=0\}\) a subspace? No, since \[\begin{pmatrix} 1\\0 \end{pmatrix}+\begin{pmatrix} 0\\1 \end{pmatrix} = \begin{pmatrix} 1\\1 \end{pmatrix}\] Which is not in the space 
+    \item Column space of \(A\) - span of columns of \(A\)
+    \item Null space of \(A\) - Span of solution set of \(A\vec{x}=\vec{0}\)
+    \item For "find a matrix whose column space is spannec by \(\vec{a}\) and null space is spanned by \(\vec{b}\)" problems, set one column to \(\vec{a}\) and solve \((\vec{a} \vec{x})\vec{b}=\vec{0}\)
+    \item Basis of a subspace - a set of linearly independent vectors in the subspace that span it
+    \item To construct a basis for null space, use parametric vector form on RREF 
+    \item To construct basis for col space, use pivotal columns of RREF
+\end{itemize}
+
+\subsection{Dimension and Rank}
+\begin{itemize}
+    \item There are multiple choices for the basis of a subspace 
+    \item If \(\textbf{B}\) is a basis for a subspace \(H\) and \(\vec{x}\) is in \(H\), the coordinates of \(\vec{x}\) relative to \(\textbf{B}\) are the weights such that 
+    \[\vec{x}=c_1b_1+c_2b_2+\dots+c_pb_p\] and \[\begin{bmatrix}x\end{bmatrix}_{\textbf{B}} = \begin{bmatrix}c_1\\c_2\\\vdots\\c_p\end{bmatrix}\]
+    Is the coordinate vector of \(\vec{x}\)
+    \item To find \(\begin{bmatrix}x\end{bmatrix}_{\textbf{B}}\), solve \(B|\vec{x}\) where \(B\)'s columns are the basis vectors
+    \item Dimension of a subspace is the number of vectors needed to make a basis 
+    \item 0 CANNOT BE A BASIS VECTOR 
+    \item dim(Null \(A\)) is number of free var 
+    \item dim(Col \(A\)) is number of basic var / pivot cols 
+    \item If \(H\) is a \(p\)-dimensional subspace, any set of \(p\) linearly indep vectors in \(H\) is automatically a basis for \(H\)
+    \item Rank - dimension of the column space of a Matrix = NUMBER OF PIVOTS
+    \item if \(A\) has \(n\) columns, Rank\(A\)+dim(null\(A\))=\(n\)
+    \item For \(A\) to be invertible, dim(Null\(A\)) MUST BE 0
+\end{itemize}
+
+\section{Module 3 - Determinants and Eigenvalues}
+\subsection{Intro to Determinants}
+\begin{itemize}
+    \item DEFINITION - 
+    \begin{itemize}
+        \item if \(A\) is \(1\times 1\) and \(A=[a_{1,1}]\)then det\(A\)=\(a_{1,1}\)
+        \item for \(A\) being \(n\times n\) where \(n>1\), \[\mbox{det}A=a_{1,1}\mbox{det}A_{1,1}-a_{1,2}\mbox{det}A_{1,2}+\dots+(-1)^{1+n}a_{1,n}\mbox{det}A_{1,n}\] 
+        Where\(A_{i,j}\) is \(A\) after eliminating row \(i\) and col \(j\) 
+    \end{itemize}
+    \item Cofactor - \((i,j)\) cofactor of \(A\) is \[C_{i,j}=(-1)^{i+j}\mbox{det}A_{i,j}\]
+    \item Determinants can be taken down any row or column 
+    \item If \(A\) is triangular, then \(\mbox{det}A=a_{1,1}a_{2,2}\dots a_{n,n}\)
+\end{itemize}
+
+\subsection{Properties of Determinants}
+\begin{itemize}
+    \item For a square matrix \(A\):
+    \begin{itemize} 
+        \item If a multiple of a row is added to another row to obtain \(B\), then \(\det{A}=\det{B}\) 
+        \item If two rows are swapped to produce \(B\) then \(\det{A}=-\det{B}\)
+        \item If a row is scaled, then \(k\det{A}=\det{B}\)
+        \item If \(A\) is reduced to echelong form by \(r\) interchanges of rows, then \(|A|=(-1)^r\) if invertible and 0 if singular 
+        \item \(|A|=|A|^T\)
+        \item \(A\) is invertible iff \(|A|\neq 0\)
+        \item \(\det{AB}=\det{A}\cdot\det{B}\)
+        \item \(\det{A^{-1}}=\frac{1}{\det{A}}\)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Volume and Linear Transformations}
+\begin{itemize}
+    \item \(\det{A}\) of a \(2\times 2\) matrix is the area of the parallelogram that the transformed unit vectors creates 
+    \item similarly, determinant of a \(3\times 3\) is the volume of the parallelopiped they form
+    \item The area/volume of a shape after a linear transformation is the initial area/volume * determinant of the transformation
+\end{itemize}
+
+\subsection{Markov Chains}
+\begin{itemize}
+    \item Probability vector - one with only non-negative elements that sum to 1
+    \item Stochastic Matrix - square matrix whose columns are probability vectors 
+    \item Markov chain - a sequence of probability vectors and a stochastic matrix such that 
+    \[\vec{x_{k+1}}=P\vec{x_{k}}, k=0,1,2,\dots\]
+    \item Steady state vector - for a stochastic matrix, is one such that 
+    \[P\vec{q}=\vec{q}\]
+    \item To find the steady-state vector, note that 
+    \[P\vec{q}-I\vec{q}=(P-I)\vec{q}=0\] Solve the system, and scale the solution to make \(||\vec{q}||=1\)
+    \item A stochastic matrix is regular if there is some \(k\) such that \(P^k\) has only positive entries 
+    \item If \(P\) is regular stochastic, then it has a unique steady-state vector \(\vec{q}\) and \(\vec{x_{k+1}}=P\vec{x_k}\) converges to \(\vec{q}\) as \(k\rightarrow\infty\)
+    \item In other words, in a long time
+\end{itemize}
+
+\subsection{Eigenvalues and Eigenvectors}
+\begin{itemize}
+    \item If \(A\) is square and there is some \(\vec{v}\) where \[A\vec{v}=\lambda\vec{x}\] Then \(\vec{v}\) is an eigenvector of \(A\) and \(\lambda\) is the corresponding eigenvalue 
+    \item Even if all entries in \(A\) are real, \(\lambda\) can be complex (for rotations)
+    \item If \(\lambda\) is real and negative, then \(A\vec{v}\) and \(\vec{v}\) are parallel but point in the same direction 
+    \item The \(\lambda\)-eigenspace for \(A\) is the subspace spanned by a given \(\lambda\) 
+    \item The eigenspace for \(A\) is Nul(\(A-\lambda I\)) 
+    \item The diagonal elements of a triangulat matrix are its eigenvalues 
+    \item If \(A\) is singular \(\leftrightarrow\) 0 is an eigenvalue of \(A\) 
+    \item Stochastic matrices have at least one eigenvalue = 1 
+    \item If \(\vec{v_1},\vec{v_2},\dots,\vec{v_k}\) are eigenvectors associated with distinct eigenvalues, then they are linearly independent 
+    \item ROW OPERATIONS CHANGE EIGENVALUES \(\rightarrow\) REDUCED MATRICES CANNOT HAVE THEIR E-VAL DETERMINED 
+\end{itemize}
+
+\subsection{The Characteristic Equation}
+\begin{itemize}
+    \item Characteristic polynomial of \(A\) - \[\det{(A-\lambda I)}\]
+    \item Characteristic equation - \[\det{(A-\lambda I)}=0\]
+    \item Roots of characteristic polynomial are the eigenvalues of \(A\) 
+    \item Trace - sum of diagonal elements of a matrix 
+    \item Algebraic multiplicity of an eigenvalue - \(a_i\), multiplicity as the root of the characteristic polynomial 
+    \item Geometric multiplicity of an eigenvalue - \(g_i\), \(dim(Nul(A-\lambda I))\) Always at least 1, but can be more than 1
+    \item Obey the following - \(1\leq a_i \leq n\), \(1\leq g_i \leq a_i\)
+    \item For a regular stochastic matrix, the eigenvector associated with the eigenvalue 1 is the steady state, all others are less than one and converge to 0
+    \item Similar Matrices - \(A\) and \(B\) such that there is some \(P\) where \[A=PBP^{-1}\] 
+    \item If \(A\) and \(B\) are similar then they have the same characteristic polynomial 
+    \item HOWEVER, if two have different eigenvalues, they do not necessarliy have to be similar
+    \item 
+\end{itemize}
+
+\subsection{Diagonalization}
+\begin{itemize}
+    \item Diagonal matrix - one where non-zero elements are only on the main diagonal 
+    \item If \(A\) is diagonal, then powers are easy, just raise elements in the main diagonal to the power applied to the matrix 
+    \item \(A\) is diagonalizable if it is similar to the diagonal matrix \(D\), or 
+    \[A=PDP^{-1}=\begin{pmatrix} \vec{v_1} & \vec{v_2} & \dots & \vec{v_n} \end{pmatrix}
+    \begin{pmatrix} \lambda_1&&& \\ &\lambda_2&& \\ &&\vdots& \\ &&&\lambda_n \end{pmatrix}
+    \begin{pmatrix} \vec{v_1} & \vec{v_2} & \dots & \vec{v_n} \end{pmatrix}^{-1}\]
+    \item \(A\) is diagonalizable \(\leftrightarrow\) \(A \mbox{has} n\) linearly independent eigenvectors 
+    \item If \(A\) has \(n\) distinct eigenvalues, it is diagonalizable 
+    \item SINGULARITY DOES NOT IMPLY A MATRIX IS NOT DIAGONALIZABLE 
+    \item \(A\) is diagonalizable iff \(g_i=a_i\) for all \(i\) 
+    \item If there are repeated eigenvalues, construct \(a_i\) eigenspace basis vectors for each eigenvalue so that \(g_1=a_i\)
+\end{itemize}
+
+\subsection{Complex Eigenvalues}
+\begin{itemize}
+    \item If \(\lambda\) is the complex root of a polynomial, its conjugate is also a root (more elaboration on complex number theory is not included due to the author's familirity with the subject)
+    \item A matrix of the form \(C=\begin{pmatrix} a&-b\\b&a \end{pmatrix}\) will have eigenvalues \(\lambda=a\pm ib\) whose argument is the degrees of rotation the marix performs
+    \item A matrix of the form above is called a dilation-rotation because it dilates by \(r=\sqrt{a^2+b^2}\) and rotates by \(\phi=\tan^{-1}{\frac{b}{a}}\)
+    \item If \(A\) is a real \(2\times 2\) matrix with eigenvalue \(\lambda=a-bi, b\neq 0\) and associated eigenvector \(\vec{v}\), we can decompose it into \[A=PCP^{-1}\] where 
+    \[P=\begin{pmatrix} Re \vec{v} & Im\vec{v} \end{pmatrix}, C=\begin{pmatrix} a&-b\\b&a \end{pmatrix}\]
+\end{itemize}
+
+\subsection{Google Page Rank}
+\begin{itemize}
+    \item For a \(m \times  m\) regular stochastic matrix, \(P\) where \(m\geq2\), the following is true 
+    \[\lim_{n\to\infty}P^n\vec{x_0}=\vec{q}\] Where \(\vec{x_0}\) is any probability vector and \(\vec{q}\) is the steady state (unique eigenvalue of \(P\) with eigenvalue \(\lambda=1\), the rest are less than 1) of \(P\)
+    \item Also, there is a stochastic matrix \(\Pi\) where \[\lim_{n\to\infty}P^n=\Pi\] And all columns of \(\Pi\) are \(\vec{q}\)
+    \item Google's page rank make the following assumptions
+    \begin{itemize}
+        \item A user is equally likely to go to any webpage the current one links to
+        \item A user on a linkless page will stay on that page 
+        \item The distribution of users can be modeled with a Markov process with matrix \(n \times n\) where \(n\) is number of pages on web 
+    \end{itemize}
+    \item The matrix is called a transition matrix and its steady state contains the \textbf{importance} of each page and it \emph{can} characterize the long-term behavior of the web 
+    \item A problem is that the transition matrix is not necessarily regular so we do not have a guaranteed steady state 
+    \item Another is that linkless pages end up with the largest importance
+    \item Adjustment 1 - users on a linkless page will choose any page on the web with equal probability and move to that, new transition matrix is \(P_*\)
+    \item Adjustment 2 - users will move to any page their page links to with probability \(p\) and any other page on the web with probability \(1-p\) so the transition matrix becomes \[G=pP_* + (1-p)K\] where all elements in \(K\) are \(\frac{1}{n}\)
+    \item \(p\) is called the damping factor 
+    \item This forces \(G\) to be regular stochastic when \(0\leq p<1\)
+    \item Google uses a damping factor of 0.85 
+    \item Then, we \(\lim_{n\to\infty}G^n\vec{x_0}\) converges to a single steady state vector \(\vec{q}\)
+\end{itemize}
+
+
+
+\section{Module 4 - Orthogonality}
+
+\subsection{Inner Product, Length, and Orthogonality}
+\begin{itemize}
+    \item Dot product - \(\vec{v}\cdot\vec{u}=\vec{v}^T\vec{u}=v_1u_1+v_2u_2+\dots+v_nu_n\)
+    \item \((\vec{v}+\vec{w})\cdot\vec{u}=\vec{v}\cdot\vec{u}+\vec{w}\cdot\vec{u}\)
+    \item \(\vec{u}\cdot\vec{u}\geq 0\)
+    \item \(\vec{u}\cdot\vec{u}=0\Rightarrow \vec{u}=0\)
+    \item Length - \(||\vec{u}||=\sqrt{\vec{u}\cdot\vec{u}}\)
+    \item LENGTH IS ALWAYS POSITIVE 
+    \item If a vector has length 1, it is a unit vector 
+    \item Distance between 2 vectors is \(||\vec{u}-\vec{v}||\)
+    \item \(\vec{a}\cdot\vec{b}=||\vec{a}||||\vec{b}||\cos{\theta}\)
+    \item Orthogonal - describes two vectors if \(\vec{a}\cdot\vec{b}=0\) or \(||\vec{a}+\vec{b}||^2=||\vec{a}||^2+||\vec{b}||^2\)
+    \item Note similarity of the above to the pythagorean theorem 
+    \item Yes \(\vec{0}\) is orthogonal to everything but we usually mean non-zero vectors when talking about orthogonality 
+    \item The span of vectors orthogonal to another is a subspace
+    \item Orthogonal compliment - of a subspace, the set of all vectors orthogonal to the subspace \(W\), and is itselt a subspace \(W^{\perp}\)
+    \item \(Rank W+Rank W^{\perp}=n\) 
+    \item \(Row A\) - space spanned by rows of \(A\) 
+    \item Basis for \(Row A\) is the pivot columns of \(A\)
+    \item \(dim(Row A)=dim(Col A)\)
+    \item \(Row A = Col A^T\)
+    \item In general, \(Row A, Col A\) are not related
+    \item \(Nul A=(Row A)^{\perp}\)
+    \item \(Nul A^T =(Col A )^{\perp}\)
+\end{itemize}
+
+\subsection{Orthogonal Sets}
+\begin{itemize}
+    \item Orthogonal set - one where all vectors are ortho to each other 
+    \item If all vectors in an ortho set are non-zero then the set is also linearly independent 
+    \item If there is an orthogonal basis for a subspace \(W\) then any \(\vec{w}\in W\) can be expressed as 
+    \[\vec{w}=c_1\vec{u_1}+c_2\vec{u_2}+\dots+c_p\vec{u_p}\] Where \[c_q=\frac{\vec{w}\cdot\vec{u_q}}{\vec{u_q}\cdot\vec{u_q}}\]
+    \item If all vectors in the basis have unit length, then \[\vec{w}=(\vec{w}\cdot\vec{u_1})\vec{u_1}+\dots+(\vec{w}\cdot\vec{u_p})\vec{u_p}\] and 
+    \[||\vec{w}||=\sqrt{(\vec{w}\cdot\vec{u_1})^2+\dots+(\vec{w}\cdot\vec{u_p})^2}\]
+    \item The closest vector to \(\vec{y}\) in the span of \(\vec{u}\) is \[\hat{y}=\frac{\vec{y}\cdot\vec{u}}{\vec{u}\cdot\vec{u}}\vec{u}\]
+    \item The projection of a vector into the span of another is \[proj_{\vec{u}}\vec{y}=\frac{\vec{y}\cdot\vec{u}}{\vec{u}\cdot\vec{u}}\vec{u}\]
+    \item A vector can be decomposed into \(\vec{z}=\vec{y}-\hat{y}\) is orthogonal to the subspace that \(\vec{y}\) was projected to
+    \item The projection of the basis of a subspace to the orthogonal compliment of that subspace is \(\vec{0}\) 
+    \item \(U\) has orthonormal columns \(\Rightarrow\) \(U^TU=I_n\)
+    \item If \(U\) has orthonormal columns, then 
+    \begin{itemize}
+        \item \(||U\vec{x}||=||\vec{x}||\)
+        \item \((U\vec{x})\cdot(U\vec{y})=\vec{x}\cdot\vec{y}\)
+    \end{itemize}
+    \item Thus, \(U\) preserves lengths and orthogonality 
+    \item Orthogonal matrix - a square one whose columns are orthonormal 
+    \item If \(U\) is orthogonal, then \(U^T=U^{-1}\), its columns are linearly independnt, and its determinant is 1 or -1
+\end{itemize}
+
+\subsection{Orthogonal Projections}
+\begin{itemize}
+    \item If \(W\) is a subspace and \(\hat{y}\) is the projection of \(\vec{y}\) onto \(W\), then for any \(\vec{v}\in W\) we have 
+    \[||\vec{y}-\hat{y}||<||\vec{y}-\vec{v}||\] 
+    AKA, \(\hat{y}\) is the vector in \(W\) closest to \(\vec{y}\) 
+    \item Thus, the distance between \(\vec{y}\) and a subspace is \(||\vec{y}-\hat{y}||\)
+    \item Ortho decomp theorem - Let \(W\) be a subspace with basis \(\vec{u_1},\vec{u_2},\dots,\vec{u_p}\) then all \(\vec{y}\) have the unique decomposition
+    \[\vec{y}=\hat{y}+z\] where \[\hat{y}=\frac{\vec{y}\cdot\vec{u_1}}{\vec{u_1}\cdot\vec{u_1}}\vec{u_1}+\dots +\frac{\vec{y}\cdot\vec{u_1}}{\vec{u_p}\cdot\vec{u_p}}\vec{u_p}\]
+    We call \(\hat{y}\) the orthogonal projection of \(\vec{y}\) onto \(W\) 
+\end{itemize}
+
+\subsection{Graham Schmidt}
+\begin{itemize}
+    \item  For a set of vectors, \(\vec{x_1},\vec{x_2}\), we can construct an ortho basis \(\vec{v_1},\vec{v_2}\) for the subspace they span with the following 
+    \[\vec{v_1}=\vec{x_1}\] \[\vec{v_2}=\vec{x_2}-\frac{\vec{x_2}\cdot\vec{v_1}}{\vec{v_1}\cdot\vec{v_1}}\vec{v_1}\]
+    \item For more basis vectors \(\vec{x_1},\dots,\vec{x_p}\) we can do something similar 
+    \[\vec{v_1}=\vec{x_1}, W_1=Span{\vec{v_1}}\]
+    \[\vec{v_2}=\vec{x_2}-proj_{W_1}\vec{x_2}, W_2=Span{\vec{v_1},\vec{v_2}}\]
+    \[\vec{v_3}=\vec{x_3}-proj_{W_2}\vec{x_3}, W_3=Span{\vec{v_1},\vec{v_2},\vec{v_2}}\]
+    \[\vdots\]
+    \item Orthonormal basis - a set of mutually orthogonal and normal vectors
+    \item Any matrix \(A\) w/ linearly independent columns has the QR-factorization 
+    \[A=QR\] where \(Q\) is \(m\times n\) and its columns are an orthonormal basis for \(Col A\) and \(R\) is \(n\times n\), upper triangular, with positive entries in its diagonal 
+    \item For QR, we do not consider matrices with linearly dependent columns normally
+    \item \(Q\) can be constructed with graham schmidt 
+    \item \(R\) can be found with \(R=Q^TA\) 
+\end{itemize}
+
+\subsection{Least Squares Problems}
+\begin{itemize}
+    \item  To make a \(A\vec{x}=\vec{b}\) for a set of univariate data, make 
+    \[\begin{pmatrix} x_1&1\\x_2&1\\\vdots&\vdots \end{pmatrix}\begin{pmatrix} x\\b \end{pmatrix} = \begin{pmatrix} y_1\\y_2\\\vdots \end{pmatrix}\]
+    \item We use least squares to find the best approximate line 
+    \item A least squares solutino to \(A\vec{x}=\vec{b}\) is \(\hat{x}\) where 
+    \[||\vec{b}-A\hat{x}||\leq||\vec{b}-A\vec{x}||\] for all \(\vec{x}\)
+    \item The normal equations - \(A^TA\hat{x}=A^T\vec{b}\), coincides with least squares solutions to \(A\vec{x}=\vec{b}\)
+    \item If \(A\)'s columns are linearly independent, then \(A^TA\) is invertible and the least squares solution to \(A\vec{x}=\vec{b}\) is \[\hat{x}=(A^TA)^{-1}A^T\vec{b}\]
+    \item Factorizing \(A=QR\), the least squares solution can be found with \(R\hat{x}=Q^T\vec{b}\)
+\end{itemize}
+
+\subsection{Applications to Linear Models}
+\begin{itemize}
+    \item With the normal equations we can find the \(\vec{x}\) that minimized \(||A\vec{x}=\vec{y}||\)
+    \item The residual vector is defined as \(\vec{r}=A\vec{x}-\vec{y}\) and \(||A\vec{x}=\vec{y}||^2=||\vec{r}||^2\) where entries of \(\vec{r}\) are called residuals 
+    \item Mean deviation form - converting all data to \(x_* = x-\bar{x}\)
+    \item By using mean deviation form, columns of \(A\) are orthogonal, so \(A^TA\) is diagonal, so normal equations are much easier to use 
+    \item We can also use least squares for non-linear data, using known functions of the form \[y=c_0+c_1f_1(x)+c_2f_2(x)+\dots+c_kf_k(x)\]
+    \item Example is a polynomial of the form \(y=c_1x+c_2x^2+c_3x^3\)
+    \item Also, we could do multivariable functions \[y=c_0+c_1f_1(x_1,\dots,x_p)+c_2f_2(x_1,\dots,x_p)+\dots+c_kf_k(x_1,\dots,x_p)\]
+    \item Example is the function \(z=c_0+c_1x+c_2y\)
+\end{itemize}
+
+\section{Module 5 - Symmetric Matrices and SVD}
+
+\subsection{Diagonalization of Symmetric Matrices}
+\begin{itemize}
+    \item Symmetric matrix - one that satisfies \(A=A^T\)
+    \item Powers of a symmetric matrix are symmetric 
+    \item \((AA^T)=(A^T)^TA^T=AA^T\) is symmetric
+    \item Symmetric matrices must be square 
+    \item Square and diagonal matrices are symmetric 
+    \item Symmetric matrices have all-real eigenvalues 
+    \item If \(A\) is symmetric with two distinct eigenvectors with distinct eigenvalues, then the eigenvectors are orthogonal
+    \item Generally, eigenspaces associated with distinct eigenvalues of a symmetic matrix are orthogonal subspaces  
+    \item Symmetric matrices can be diagonalized into \(A=PDP^T\) since \(P\) would be orthogonal given the eigenvectors of \(A\) and \(P^T=P^{-1}\)
+    \item Gram-Schmidt might be needed to construct a fully orthogonal \(P\) if eigenvalues are repeated 
+    \item Furthermore, if \(A\) can be decomposed into \(A=PDP^T\) then it is symmetric 
+    \item The spectrum of a matrix is the full set of its eigenvalues 
+    \item Spectral decomposition of a matrix - if \(A\) can be orthogonally diagonalized intro \(A=PDP^T\) then it has the spectral decomposition 
+    \[A=\lambda_1\vec{u_1}\vec{u_1}^T+\dots+\lambda_n\vec{u_n}\vec{u_n}^T\]
+    \item Ordering eigenvalues from largest to smallest allows us to approximate the matrix itself by choosing how many terms to include in its decomposition
+\end{itemize}
+
+\subsection{Quadratic Forms}
+\begin{itemize}
+    \item Quadratic form - function \(Q:\textbf{R}^n\rightarrow\textbf{R}\) given by
+    \[Q(\vec{x})=\vec{x}^TA\vec{x}=
+    \begin{pmatrix} x_1&x_2&\dots&x_n \end{pmatrix} 
+    \begin{pmatrix} a_{1,1}&a_{1,2}&\dots&a_{1,n} \\ a_{1,2}&a_{2,2}&\dots&a_{2,n} 
+        \\ \vdots&\vdots&\ddots&\vdots \\ a_{1,n}&a_{2,n}&\dots&a_{n,n}\end{pmatrix}
+    \begin{pmatrix} x_1\\x_2\\\vdots\\x_n \end{pmatrix}\] Where \(\vec{x}\) is variables 
+    \item Cross product term - one with multiple variables 
+    \item The highest degree of any term is 2
+    \item Coefficients of one-var terms are on the main diagonal and those of cross product terms are on the triangles 
+    \item The squared length of a linear transform is a quadratic form \[||A\vec{x}||^2=(A\vec{x})\cdot(A\vec{x})=\vec{x}^TA^TA\vec{x}\]
+    \item Change of variable is done to remove cross product terms 
+    \item Since \(A\) is symmetric, it can be decomposed into \(A=PDP^T\)
+    \item The orthogonal change of variable is \(\vec{x}=P\vec{y}\Rightarrow \vec{y}=P^{-1}\vec{x}\)
+    \item Thus \(\vec{x}^TA\vec{x}=\vec{y}^TD\vec{y}=\lambda_1y_1^2+\dots+\lambda_ny_n^2\)
+    \item If we set \(Q\) to some constraint, we can use change of var to more easily see max and min points, as well as if \(Q\) can be positive or negative 
+    \item The quadratic form from a \(2\times 2\) matrix will give a surface in 3D space
+    \item If \(Q\) is \_ it is \_ 
+    \begin{itemize}
+        \item \(Q>0\), positive definite
+        \item \(Q<0\), negative definite 
+        \item \(Q\geq0\), positive semidefinite
+        \item \(Q\leq0\), negative semidefinite
+        \item Both negative and positive, indefinite 
+    \end{itemize}
+    \item \(Q\) is positive definite when all eigenvalues are positive, negative definite if all values are negative, and indefinite if it has at least one positive and negative eigenvalue 
+\end{itemize}
+
+\subsection{Quadratic Forms}
+\begin{itemize}
+    \item Surface of a sphere is given by \(1=x_1^2+x_2^2+x_3^2=||\vec{x}||^2\)
+    \item We may want to solve for the quantity at a point \(Q(\vec{x})=c_1x_1^2+c_2x_2^2+c_3x_3^2\)
+    \item To find the largest and smallest values, not that 
+    \[Q(\vec{x})=c_1x_1^2+c_2x_2^2+c_3x_3^2\leq max{c_1,c_2,c_3}(x_1^2+x_2^2+x_3^2)=max{c_1,c_2,c_3}||\vec{x}||^2\]
+    \item For \(Q=\vec{x}^TA\vec{x}\), the max is associated with the eigenvector of the largest eigenvalue of \(A\) is A is diagonal, or \(D\) from \(A=PDP^{-1}\) if it is not 
+    \item Similar with the minimum value of \(Q\)
+    \item The above is a constrained value problem 
+    \item When repeated eigenvalues occur, construct all eigenvectors needed to make an appropriate basis, and ensure other eigenvectors are orthogonal to all 
+    \item With repeated eigenvalues and thus multiple bases for an eigenspace, all max/mins are located at unit vectors in the SPAN of the eigenvectors, not just one of them 
+    \item If \(\vec{x}\) is constrained to be orthogonal to the max/min vector, the new max/min is given by \(\vec{u_2}/\vec{U_{n-1}}\)
+\end{itemize}
+
+\subsection{The SINGULAR VALUE DECOMPOSITION}
+\begin{itemize}
+    \item Singular value - of a real matrix \(A\), are the square roots of the eigenvalues of \(A^TA\), notated as \(\sigma_1=\sqrt{\lambda_1}\)
+    \item If we want to maximize \(||A\vec{x}||\) subject to \(||\vec{v}||=1\), we note that the maximum would occur at the same location where \(||A\vec{v}||^2\) is maximized and that 
+    \[||A\vec{v}||^2=\vec{v}^TA^TA\vec{v}\] Therefore the max of \(\vec{v}^TA^TA\vec{v}\) occurs at the eigenvectors of \(A^TA\), so the max of \(||A\vec{v}||\) also does, and this max is the square root cause unsquare
+    \item The eigenvalues of \(A^TA\) are all non-negative 
+    \item The \(n\) orthogonal eigenvectors of \(A^TA\) are ordered such that their eigenvalues are \(\lambda\geq\dots\geq\lambda_n\) and there are \(r\) non-zero singular values of \(A\) the following is true:
+    \[\{\vec{v_{r+1}},\dots,\vec{v_{n}}\}\] form an orthogonal basis for nul \(A\) and \[\{\vec{v_{1}},\dots,\vec{v_{r}}\}\] form an orthogonal basis for row\(A\), and \(rank A=r\)
+    \item ALSO, the ordered eigenvectors of \(A^TA\) form a set \(A\vec{v_1},\dots,A\vec{v_r}\) that is an orthogonal basis for Col\(A\) 
+    \item Furthermore, we define \(\vec{u_i}=\frac{1}{\sigma_i}A\vec{v_i}\)
+    \item The set \(\{\vec{u_{1}},\dots,\vec{u_{r}}\}\) forms an orthogonal basis for Col \(A\) 
+    \item Left singular vector - \(\vec{u_i}\)
+    \item Right singular vector - \(\vec{v_i}\)
+    \item SVD - Suppose \(A\) is \(m\times n\) with \(\sigma_1\geq\dots\geq\sigma_n\), then it has the decomposition \(A=U\Sigma V^T\) where
+    \[D=\begin{pmatrix} \sigma_1&0&\dots&0\\ 0&\sigma_2&\dots&\vdots\\\vdots&\vdots&\ddots&\vdots\\0&0&\dots&\sigma_n \end{pmatrix}\]
+    \begin{itemize}
+        \item \(\Sigma=\begin{pmatrix} D \\ 0_{m-n,n} \end{pmatrix}\) if \(m\geq n\)
+        \item \(\Sigma=\begin{pmatrix} D & 0_{m,n-m} \end{pmatrix}\) if \(m<n\)
+    \end{itemize}
+    \item In the SVD \(V\) is orthogonal and \(n \times n\) and its columns are the eigenvectors of \(A^TA\) with additional orthogonal columns built with gram-schmidt if necessary
+    \item In the SVD \(U\) is orthogonal and \(m \times m\) and its columns are \(\vec{u_i}=\frac{1}{\sigma_i}A\vec{v_i}\) with additional orthogonal columns built with gram-schmidt if necessary
+\end{itemize}
+
+\subsection{Applications of the SINGULAR VALUE DECOMPOSITION}
+\begin{itemize}
+    \item If \(A\) is \(n \times n\) and intertible, then \(\frac{\sigma_1}{\sigma_n}\)is the condition number of \(A\)
+    \item Condition number tells how sensitive methods of solving \(A\vec{x}=\vec{b}\) will be to errors in \(A\), bigger condition number means more sensitivity
+    \item SVD can be used to make a spectral decomposition of any matrix with rank \(r\) \[A=\sum_{i=1}^r \sigma_i\vec{u}\vec{v}^T\]
+    \item Each resulting term has a rank of 1, and this decomposition can be used to approximate \(A\) similar to a Taylor expansion 
+    \item SVD AND THE SUBSPACES - for a matrix \(A\) where 
+    \begin{itemize}
+        \item \(\vec{v_i}\) are the eigenvectors of \(A^TA\)
+        \item \(\vec{u_i}\) are the eigenvectors of \(AA^T\)
+        \item \(r\)=rank\(A\)
+    \end{itemize}
+    The following is true
+    \begin{itemize}
+        \item \(\vec{v_1},\dots,\vec{v_r}\) form an orthonormal basis for Row\(A\)=Nul\(A^{\perp}\)
+        \item \(\vec{v_{r+1}},\dots,\vec{v_n}\) form an orthonormal basis for Nul\(A\)=Row\(A^{\perp}\)
+        \item \(\vec{u_1},\dots,\vec{u_r}\) form an orthonormal basis for Col\(A\)=Nul\((A^T)^{\perp}\)
+        \item \(\vec{u_{r+1}},\dots,\vec{u_m}\) form an orthonormal basis for Nul\(A^T\)=Col\(A^{\perp}\)
+    \end{itemize}
+\end{itemize}
 
 \end{document}
