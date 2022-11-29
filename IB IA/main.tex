@@ -19,7 +19,7 @@
 
 \title{IB Math Analysis and Approaches Internal Assessment: \emph{Generalizing and Describing the Fibonacci Sequence}}
 \author{Edwin Trejo Balderas}
-\date{December, 2022}
+\date{November, 2022}
 
 \begin{document}
 
@@ -66,7 +66,7 @@ In this investigation, I aim to determine the behavior of generalized m-nacci se
 \end{table}
 
 \section{Relevant Mathematical Background}
-A few fundamental definitions are given below. (3.1) and (3.2) come from Bozlee (2017), and (3.3) comes from a course in sequences and series I took over the summer before my senior year.
+A few fundamental definitions are given below. (3.1) and (3.2) come from Bozlee (2017), and (3.3) comes from a course in sequences and series I took over the summer before my senior year (Geistfeld, 2022).
 
 \begin{definition}[Linear Homogenous Recurrence Relation] A linear homogenous recurrence relation (which I will call a \textbf{linear recurrence}) of degree \mbox{k}, is a recurrence relation of the form:
     $$a_n=c_1a_{n-1}+c_2a_{n-2}+\dots +c_ka_{n-k}; c_1,c_2,\dots,c_k\in \mbox{\textbf{C}}$$ 
@@ -101,7 +101,7 @@ Two more definitions that are particularly important to this exploration are
 \end{definition}
 
 \subsection{Method for Deriving the Explicit Formula of a Linear Recurrence}
-The method I learned for deriving the explicit formula of a linear recurrence, $a_n$ is outlined below.
+The method I learned for deriving the explicit formula of a linear recurrence, $a_n$ is outlined below (Geistfeld, 2022).
 \begin{enumerate}
     \item Determine the characteristic polynomial of $a_n$, $f(\lambda)$
     \item Determine the roots of $f(\lambda)$, $\lambda_1,\lambda_2,\dots,\lambda_k$
@@ -159,11 +159,49 @@ Solving gives
 \end{align*}
 Thus the explicit form of the Fibonacci Sequence is
 $$F_n=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n$$
-Which is indeed Binet's formula for the Fibonacci Sequence.
+Which is indeed Binet's formula for the Fibonacci Sequence (Art of Problem Solving, n.d.).
 It is also important to note that the hightest-magnitude root of the characteristic polynomial of the Fibonacci Sequence is $\frac{1+\sqrt{5}}{2}$, which is indeed the Golden Ratio. This root has a greater magnitude than the other, and thus becomes dominant as the index approaches infinity. Furthermore, in this case, the second root's magnitude is less than 1, so it approaches 0 as the index increases.  
 
 \section{Extending to the Tribonacci Sequence}
 We can use the same methods to find the explicit form and limiting ratio of the tribonacci sequence, the third-degree m-nacci sequence
 $$T_n=T_{n-1}+T_{n-2}+T_{n-3};T_0=T_1=0, T_2=1$$
+
+With characteirstic polynomial:
+\[\lambda^3-\lambda^2-\lambda-1\]
+and roots
+\[\lambda_1 \approx 1.84, \lambda_2 \approx -0.42 + 0.606i, \lambda_3 \approx -0.42 - 0.606i\]
+Which gives the explicit form
+\[T_n=d_1(1.84)^n+d_2(-0.42 + 0.606i)^n+d_3(-0.42 - 0.606i)^n\]
+And the following system:
+\begin{align*}
+    T_0=0=d_1(1.84)^0+d_2(-0.42 + 0.606i)^0+d_3(-0.42 - 0.606i)^0 \\
+    T_1=0=d_1(1.84)^1+d_2(-0.42 + 0.606i)^1+d_3(-0.42 - 0.606i)^1 \\
+    T_2=1=d_1(1.84)^2+d_2(-0.42 + 0.606i)^2+d_3(-0.42 - 0.606i)^2
+\end{align*}
+
+Using a python program I wrote to solve systems of equations with complex entries, I obtained the following values for $d_1,d_2,d_3$:
+\[d_1\approx0.0994,d_2\approx0.45-0.161i,d_3\approx0.45+0.161i\]
+Thus, the explicit formula for the Tribonacci Sequence is:
+\[T_n\approx(0.0994)(1.84)^n+(0.45-0.161i)(-0.42 + 0.606i)^n+(0.45+0.161i)(-0.42 - 0.606i)^n\]
+Finding the magnitude of each root of the characteristic polynomial gives: 
+\begin{align*}
+    |\lambda_1|&\approx|1.84|=1.84 \\
+    |\lambda_2|&\approx|-0.42 + 0.606i|= \\
+    |\lambda_3|&\approx|-0.42 - 0.606i|= 
+\end{align*}
+
+\newpage 
+
+\[\lim_{n\to\infty}r+r^{-n}=2\]
+
+\[\lim_{n\to\infty}r+r^{-n}=r=2\]
+
+\begin{align*}
+    a_n &= (0.041)*(1.93)^n + (0.272 - 0.174i)*(-0.0764 + 0.815i)^n + \\ &(0.272 + 0.174i)*(-0.0764 - 0.815i)^n + (0.415)*(-0.775)^n
+\end{align*}
+
+\begin{align*}
+    a_n &= (0.0183)*(1.97)^n + (0.171 - 0.152i)*(0.195 + 0.849i)^n + (0.171 + 0.152i)*(0.195 - 0.849i)^n + \\ &(0.32 - 0.0794i)*(-0.678 + 0.459i)^n + (0.32 + 0.0794i)*(-0.679 - 0.459i)^n
+\end{align*}
 
 \end{document}
