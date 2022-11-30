@@ -188,26 +188,26 @@ $$T_n=T_{n-1}+T_{n-2}+T_{n-3};T_0=T_1=0, T_2=1$$
 With characteirstic polynomial:
 \[\lambda^3-\lambda^2-\lambda-1\]
 and roots
-\[\lambda_1 \approx 1.84, \lambda_2 \approx -0.42 + 0.606i, \lambda_3 \approx -0.42 - 0.606i\]
+\[\lambda_1 \approx 1.84, \lambda_2 \approx -0.420 + 0.606i, \lambda_3 \approx -0.420 - 0.606i\]
 Which gives the explicit form
-\[T_n=d_1(1.84)^n+d_2(-0.42 + 0.606i)^n+d_3(-0.42 - 0.606i)^n\]
+\[T_n=d_1(1.84)^n+d_2(-0.420 + 0.606i)^n+d_3(-0.420 - 0.606i)^n\]
 And the following system:
 \begin{align*}
-    T_0=0=d_1(1.84)^0+d_2(-0.42 + 0.606i)^0+d_3(-0.42 - 0.606i)^0 \\
-    T_1=0=d_1(1.84)^1+d_2(-0.42 + 0.606i)^1+d_3(-0.42 - 0.606i)^1 \\
-    T_2=1=d_1(1.84)^2+d_2(-0.42 + 0.606i)^2+d_3(-0.42 - 0.606i)^2
+    T_0=0=d_1(1.84)^0+d_2(-0.420 + 0.606i)^0+d_3(-0.420 - 0.606i)^0 \\
+    T_1=0=d_1(1.84)^1+d_2(-0.420 + 0.606i)^1+d_3(-0.420 - 0.606i)^1 \\
+    T_2=1=d_1(1.84)^2+d_2(-0.420 + 0.606i)^2+d_3(-0.420 - 0.606i)^2
 \end{align*}
 
 Using a python program I wrote to solve systems of equations with complex entries, I obtained the following values for $d_1,d_2,d_3$:
 \[d_1\approx0.0994,d_2\approx0.45-0.161i,d_3\approx0.45+0.161i\]
 Thus, the explicit formula for the Tribonacci Sequence is:
-\[T_n\approx(0.0994)(1.84)^n+(0.45-0.161i)(-0.42 + 0.606i)^n+(0.45+0.161i)(-0.42 - 0.606i)^n\]
+\[T_n\approx(0.0994)(1.84)^n+(0.45-0.161i)(-0.420 + 0.606i)^n+(0.45+0.161i)(-0.420 - 0.606i)^n\]
 And its limiting ratio is \[\Phi_3\approx1.84\]
 To observe the behavior of each term in as the index approached infinity, we can find the magnitude of each root of the characteristic polynomial gives: 
 \begin{align*}
     |\lambda_1|&\approx|1.84|=1.84 \\
-    |\lambda_2|&\approx|-0.42 + 0.606i|=\sqrt{0.42^2+0.606^2}\approx 0.737\\
-    |\lambda_3|&\approx|-0.42 - 0.606i|=\sqrt{0.42^2+0.606^2}\approx 0.737
+    |\lambda_2|&\approx|-0.420 + 0.606i|=\sqrt{0.420^2+0.606^2}\approx 0.737\\
+    |\lambda_3|&\approx|-0.420 - 0.606i|=\sqrt{0.420^2+0.606^2}\approx 0.737
 \end{align*}
 Since the second and third terms have a magnitude less than 1, their magnitude approaches 0 as the index approaches infinity, which allows the limiting ratio to 'take over' at higher indices. 
 
@@ -246,8 +246,24 @@ Since conjugation is distributive, we know the sets of conjugate numbers present
 
 
 \section{Applying to Higher-Degree Sequences}
-I wrote a python script that finds an explicit form for any \(m\)-nacci sequence and ran it with a few values above those we have seen so far. A table summarizing these trials is shown below. 
+I wrote a python script that finds an explicit form for any \(m\)-nacci sequence and used it to find an explicit form for the \(m\)-nacci sequences of degrees 4-6, which are shown below. 
+\begin{align*}
+    F^{(4)}_n & \approx 0.0410(1.93)^n + (0.272-0.174i)(-0.0764+0.815i)^n+ \\ & (0.272+0.174i)(-0.0764-0.815i)^n + 0.415(-0.775)^n \\
+    F^{(5)}_n & \approx 0.0183(1.97)^n + \\ & (0.171-0.152i)(0.195+0.849i)^n + (0.171+0.152i)(0.195-0.849i)^n + \\ & (0.320-0.0794i)(-0.678+0.459i)^n + (0.320+0.0794i)(-0.678-0.459i)^n \\
+    F^{(6)}_n & \approx 0.00857(1.98)^n + (0.112-0.127i)(0.390 + 0.818i)^n + \\ & (0.112 + 0.127i)(0.390-0.818i)^n + 0.292(-0.840)^n + \\ & (0.238-0.107i)(-0.462 + 0.719i)^n + (0.238 + 0.107i)(-0.462-0.719i)^n
+\end{align*}
+Furthermore, the limiting ratios of these sequences, given by their only positive, real exponential bases, are 
+\[\Phi_4\approx 1.93, \Phi_5\approx 1.97, \Phi_6\approx 1.98\]
+I noticed that they, in combination with the limiting ratios of the Fibonacci and Tribonacci sequences, seem to approach 2. So, I propose
+\begin{theorem}
+    The limit of an \(m\)-nacci sequence's limiting ratio as its degree approaches infinity is 2
+    \[\lim_{m\to\infty} \lim_{n\to\infty}\frac{F^{(m)}_{n+1}}{F^{(m)}_{n}}=\lim_{m\to\infty} \Phi_m = 2 \]
+\end{theorem}
 
+
+
+\section{Evaluation and Conclusion}
+In reviewing my 
 
 \section{Avenues for Future Research}
 Pell sequence and other degree 2 where the first term is multuplied by an integer 
