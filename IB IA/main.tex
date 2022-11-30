@@ -65,6 +65,9 @@ In this investigation, I aim to determine the behavior of generalized m-nacci se
 \end{center}
 \end{table}
 
+
+
+
 \section{Relevant Mathematical Background}
 A few fundamental definitions are given below. (3.1) and (3.2) come from Bozlee (2017), and (3.3) comes from a course in sequences and series I took over the summer before my senior year (Geistfeld, 2022).
 
@@ -90,14 +93,14 @@ A few fundamental definitions are given below. (3.1) and (3.2) come from Bozlee 
 \end{definition}
 
 Two more definitions that are particularly important to this exploration are 
-\begin{definition}[m-nacci Sequence] An m-nacci sequence is a linear recurrence whose coefficients all equal 1:
+\begin{definition}[Limiting Ratio] The limiting ratio of a linear recurrence, $a_n$, is the limit of its ratio as its index approaches $\infty$:
+    $$\Phi=\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}$$
+\end{definition}
+
+\begin{definition}[m-nacci Sequence] An m-nacci sequence is a linear recurrence of degree \(m\) whose coefficients all equal 1:
     $$a_n=a_{n-1}+a_{n-2}+\dots +a_{n-k}$$ 
     With initial terms: 
     $$a_0,a_1,\dots,a_{k-2}=0;a_{k-1}=1$$
-\end{definition}
-
-\begin{definition}[Limiting Ratio] The limiting ratio of a linear recurrence, $a_n$, is the limit of its ratio as its index approaches $\infty$:
-    $$\Phi=\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}$$
 \end{definition}
 
 \subsection{Method for Deriving the Explicit Formula of a Linear Recurrence}
@@ -132,17 +135,29 @@ The method described below is one I independently developed and after going thro
         r^{k}-c_1r^{k-1}-c_2r^{k-2}-\dots -c_k=0
     \end{align*}
     Note how this is analagous to the characteristic polynomial of $a_n$
-    \item Solve for the roots, $r$, 
-    \item The root that is the limiting ratio will be the root with the highest magnitude. This is because when the roots are used in the explicit form of $a_n$, the root with the highest magnitude will become the 'dominant' root and successive terms will become more dependent on it. 
+    \item Solve for the roots, $r$ (this is the same as asking to solve for the roots of the characteristic polynomial), 
+    \item The root that is the limiting ratio will depend on the nature of the sequence's initial terms and coefficients. Since the object of study, \(m\)-nacci sequences have only non-negative and real terms, the root that is the limiting ratio will be positive. 
 \end{enumerate}
+We use Descartes' Rule of signs to confirm that there will only ever be one positive, real root for the characteristic polynomial. Decartes' rule of signs states that the maximum number of positive real roots of a polynomial is the number of sign changes, \(n\), in its terms when counting from the highest to lowest (or lowest to highest) degree. Furthermore, it states the number of allowable roots is \(n\) minus some even number. 
+For characteristic polynomials of \(m\)-nacci sequences, we know they will always have the form 
+\[f(\lambda)=\lambda^{k}-\lambda^{k-1}-\dots-\lambda\]
+Since all of the coefficients of an \(m\)-nacci sequence are a positive number, 1. Therefore, counting from the highest degree to the lowest degree terms, there will always be one sign change that occurs, which will be between the highest and second-highest degree terms. So, according to the rule of signs, there is at most one positive, real root of the characteristic polynomial of an \(m\)-nacci sequence. 
+Furthermore, subtracting an even number from 1 greater than 0 would not make sense as there cannot be -1 positive roots to a polynomial, so there is only 1 positive, real root to a characteristic polynomial of the form above. So, the limiting ratio of an \(m\)-nacci sequence is the only positive, real root of its characteristic polynomial.
 
 
-\section{The Explicit Form and Limiting Ratio of the Fibonacci Sequence}
-As an example, we can determine the explicit form of the Fibonacci Sequence, the second-degree m-nacci sequence:
-$$F_n=F_{n-1}+F_{n-2}; F_0=0, F_1=1$$
-Which has the following characteristic polynomial:
+
+\section{Describing the Behavior of the Fibonacci Sequence}
+
+As an example, we can determine the explicit form and limiting ratio of the Fibonacci Sequence, the second-degree m-nacci sequence:
+
+\begin{definition}[Fibonacci Sequence]The second degree \(m\)-nacci sequence:
+    \[F_n=F_{n-1}+F_{n-2}; F_0=0, F_1=1\]
+\end{definition}
+
+\subsection{Explicit form of the Fibonacci Sequence}
+Using the method outlined in section 3.1, we find the characteristic polynomial of Definition 4.1:
 $$\lambda^2-\lambda-1$$
-With roots
+With roots:
 $$\lambda_1=\frac{1+\sqrt{5}}{2},\lambda_2=\frac{1-\sqrt{5}}{2}$$
 Which gives the following explicit form
 $$F_n=d_1\left(\frac{1+\sqrt{5}}{2}\right)^n+d_2\left(\frac{1-\sqrt{5}}{2}\right)^n$$
@@ -157,15 +172,19 @@ Solving gives
     1 &= d_1\frac{1+\sqrt{5}}{2}+d_2\frac{1-\sqrt{5}}{2} = -d_2\frac{1+\sqrt{5}}{2}+d_2\frac{1-\sqrt{5}}{2}= d_2\left(\frac{-1-\sqrt{5}+1-\sqrt{5}}{2}\right)= d_2\left(\frac{-2\sqrt{5}}{2}\right) \\
     1 &= -\sqrt{5}d_2\Rightarrow d_2=-\frac{1}{\sqrt{5}} \Rightarrow d_1=\frac{1}{\sqrt{5}}
 \end{align*}
+
 Thus the explicit form of the Fibonacci Sequence is
-$$F_n=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n$$
+    \[F_n=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\]
 Which is indeed Binet's formula for the Fibonacci Sequence (Art of Problem Solving, n.d.).
-It is also important to note that the hightest-magnitude root of the characteristic polynomial of the Fibonacci Sequence is $\frac{1+\sqrt{5}}{2}$, which is indeed the Golden Ratio. This root has a greater magnitude than the other, and thus becomes dominant as the index approaches infinity. Furthermore, in this case, the second root's magnitude is less than 1, so it approaches 0 as the index increases.  
+
+\subsection{Limiting Ratio of the Fibonacci Sequence}
+The positive root of the Fibonacci sequence's characteristic polynomial is $\frac{1+\sqrt{5}}{2}$, which is indeed the Golden Ratio. This root has a greater magnitude than the other, and thus becomes dominant as the index approaches infinity. Furthermore, the second root's magnitude is less than 1, so it and the term assoaciated with it approach 0 as the index approaches infinity.  
+
+
 
 \section{Extending to the Tribonacci Sequence}
 We can use the same methods to find the explicit form and limiting ratio of the tribonacci sequence, the third-degree m-nacci sequence
 $$T_n=T_{n-1}+T_{n-2}+T_{n-3};T_0=T_1=0, T_2=1$$
-
 With characteirstic polynomial:
 \[\lambda^3-\lambda^2-\lambda-1\]
 and roots
@@ -183,12 +202,56 @@ Using a python program I wrote to solve systems of equations with complex entrie
 \[d_1\approx0.0994,d_2\approx0.45-0.161i,d_3\approx0.45+0.161i\]
 Thus, the explicit formula for the Tribonacci Sequence is:
 \[T_n\approx(0.0994)(1.84)^n+(0.45-0.161i)(-0.42 + 0.606i)^n+(0.45+0.161i)(-0.42 - 0.606i)^n\]
-Finding the magnitude of each root of the characteristic polynomial gives: 
+And its limiting ratio is \[\Phi_3\approx1.84\]
+To observe the behavior of each term in as the index approached infinity, we can find the magnitude of each root of the characteristic polynomial gives: 
 \begin{align*}
     |\lambda_1|&\approx|1.84|=1.84 \\
-    |\lambda_2|&\approx|-0.42 + 0.606i|= \\
-    |\lambda_3|&\approx|-0.42 - 0.606i|= 
+    |\lambda_2|&\approx|-0.42 + 0.606i|=\sqrt{0.42^2+0.606^2}\approx 0.737\\
+    |\lambda_3|&\approx|-0.42 - 0.606i|=\sqrt{0.42^2+0.606^2}\approx 0.737
 \end{align*}
+Since the second and third terms have a magnitude less than 1, their magnitude approaches 0 as the index approaches infinity, which allows the limiting ratio to 'take over' at higher indices. 
+
+\subsection{Proving the output will always be real}
+Initially, the explicit form for the tribonacci sequence I derived concerned me as I was aware complex numbers could appear, but I did not know they would be so prevalent. I was concerned their presence would introduce complex numbers in the sequence the explicit form generates, which would not agree with the tribonacci sequence, but I realized the two terms that contain complex numbers contain only conjugates (both the coefficient and exponential base in the second term are conjugates of their counterparts in the third). Knowing the sum of conjugate complex numbers returns a real number, I propose the following. 
+\begin{theorem}
+    Complex conjugation is distributive over multiplication. 
+    \[\overline{z_1}\cdot\overline{z_2}\cdot\dots\cdot\overline{z_n}=\overline{z_1\cdot z_2\cdot\dots\cdot z_n}\]
+\end{theorem}
+To prove Theorem 5.1, induction is used. First, we show our proposition is true for \(n=2\). Let \(z_1\) and \(z_2\) be complex numbers: 
+\[z_1=a+bi,z_2=c+di, a,b,c,d\in\mbox{\textbf{R}}\]
+We want to show that 
+\[\overline{z_1}\cdot\overline{z_2}=\overline{z_1\cdot z_2}\]
+Performing the left operation gives 
+\[\overline{z_1}\cdot\overline{z_2}=(a-bi)(c-di)=ac-adi-bci-bd=(ac-bd)-(ad+bc)i\]
+Perfoming the right operation gives:
+\[\overline{z_1 \cdot z_2}=\overline{(a+bi)(c+di)}=\overline{ac+adi+bci-bd}=\overline{(ac-bd)+(ad+bc)i}=(ac-bd)-(ad+bc)i\]
+Thus, the proposition holds true for \(n=2\)
+Now, we assume the proposition is true for all \(n=k\)
+\[\overline{z_1}\cdot\overline{z_2}\cdot\dots\cdot\overline{z_k}=\overline{z_1\cdot z_2\cdot\dots\cdot z_k}\]
+And prove it is true for all \(n=k+1\)
+\[\overline{z_1}\cdot\overline{z_2}\cdot\dots\cdot\overline{z_k}\cdot\overline{z_{k+1}}=\overline{z_1\cdot z_2\cdot\dots\cdot z_k\cdot z_{k+1}}\]
+Let \(z_1\cdot z_2\cdot\dots\cdot z_k\) be denoted as \(\zeta_1\) and \(z_{k+1}\) be denoted as \(\zeta_2\). 
+Let \(\zeta_1\) and \(\zeta_2\) be complex numbers:
+\[\zeta_1=a+bi,\zeta_2=c+di, a,b,c,d\in\mbox{\textbf{R}}\]
+So, we want to prove 
+\[\overline{\zeta_1}\cdot\overline{\zeta_2}=\overline{\zeta_1\cdot \zeta_2}\]
+Performing the left operation gives 
+\[\overline{\zeta_1}\cdot\overline{\zeta_2}=(a-bi)(c-di)=ac-adi-bci-bd=(ac-bd)-(ad+bc)i\]
+Perfoming the right operation gives:
+\[\overline{\zeta_1 \cdot \zeta_2}=\overline{(a+bi)(c+di)}=\overline{ac+adi+bci-bd}=\overline{(ac-bd)+(ad+bc)i}=(ac-bd)-(ad+bc)i\]
+Therefore, the proposition holds for all \(n=k+1\), and, combining with the base case, we have proved Theorem 5.1.
+
+Since conjugation is distributive, we know the sets of conjugate numbers present in the second and third terms of the explicit form for the tribonacci sequence will multiply to gove conjugate numbers themselves, and thus they will sum to a real number. In fact, since complex roots of a polynmial always come in conjugate pairs, we know their associated pairs of terms in the explicit forms of higher-degree \(m\)-nacci sequences will also sum to a real number. Therefore, complex outputs are not a risk in my method of explicit forms for \(m\)-nacci sequences.
+
+
+
+\section{Applying to Higher-Degree Sequences}
+I wrote a python script that finds an explicit form for any \(m\)-nacci sequence and ran it with a few values above those we have seen so far. A table summarizing these trials is shown below. 
+
+
+\section{Avenues for Future Research}
+Pell sequence and other degree 2 where the first term is multuplied by an integer 
+Proving all other roots have a magnitude less than the positive one
 
 \newpage 
 
