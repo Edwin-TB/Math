@@ -1,8 +1,13 @@
 import numpy as np
 
 #setup variables
+<<<<<<< HEAD
 S = [0,0,0,1] # seed numbers
 C = [1,1,1,1] # coefficients of terms, ordered in descending power
+=======
+S = [0,0,0,0,1] # seed numbers
+C = [1,1,1,1,1] # coefficients of terms, ordered in descending power
+>>>>>>> 0b9ce89616aebd1b5204d2038c7ef99a811e9704
 D = len(C)
 
 p = [1] # characteristic polynomial coefficient array, starts with 1 since that wil always be the coefficient of the highest degree, corresponding to the next entry in the sequence
