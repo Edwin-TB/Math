@@ -1,13 +1,7 @@
 # Fdb version 3
-<<<<<<< HEAD
-["pdflatex"] 1673266760 "c:/Users/edwin/Desktop/code/Math/IB IA/main.tex" "main.pdf" "main" 1673266762
-  "C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1665967451 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
-  "C:/Users/edwin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1665967447 10788011 9ea5a4a4f23cb79a804ec207e8262916 ""
-=======
-["pdflatex"] 1669831561 "c:/Users/edwin/Desktop/Math/IB IA/main.tex" "main.pdf" "main" 1669831565
-  "C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1664838085 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1673287846 "c:/Users/edwin/Desktop/Math/IB IA/main.tex" "main.pdf" "main" 1673287849
+  "C:/Users/edwin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1673287588 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/edwin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1656075373 10326007 7c48915c59380244145321e9ff15d9af ""
->>>>>>> 0b9ce89616aebd1b5204d2038c7ef99a811e9704
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -165,6 +159,7 @@
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty" 1655054652 8010 a8d949cbdbc5c983593827c9eec252e1 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1655054652 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1655054652 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
+  "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/hanging/hanging.sty" 1251894346 4463 c6799c846e929ba38d06f5b592b4b2e3 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1650426116 31067 89623bb5c412243bea4c601866f5e8c1 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.sty" 1621069645 1090 bae35ef70b3168089ef166db3e66f5b2 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgfcore.sty" 1621069645 410 615550c46f918fcbee37641b02a862d9 ""
@@ -179,21 +174,15 @@
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrcs.sty" 1621069645 325 f9f16d12354225b7dd52a3321f085955 ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/pgfplots/pgfplots.sty" 1621071861 4904 ee78b44e85d6fccf08cd99370557481e ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
-<<<<<<< HEAD
-  "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty" 1654687228 1618 6f0598aa81f9ba5cf5d393b4abd3e091 ""
-  "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656233290 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/edwin/Desktop/code/Math/IB IA/main.tex" 1673266757 21177 066e8504cbda158f6a927cc95227e952 ""
-  "main.aux" 1673266762 1680 ac7507eda6888da4c8174178ef7a01f0 "pdflatex"
-  "main.tex" 1673266757 21177 066e8504cbda158f6a927cc95227e952 ""
-=======
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty" 1636710260 1618 786b14c5a3e144c3a51452d08232d18b ""
   "C:/Users/edwin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "c:/Users/edwin/Desktop/Math/IB IA/main.tex" 1669831559 19370 6d1fb5d792de2ed65d9e6135f8acd701 ""
-  "main.aux" 1669831564 1843 ba2560940dba57a9c22f9b84cfce4061 "pdflatex"
-  "main.tex" 1669831559 19370 6d1fb5d792de2ed65d9e6135f8acd701 ""
->>>>>>> 0b9ce89616aebd1b5204d2038c7ef99a811e9704
+  "c:/Users/edwin/Desktop/Math/IB IA/main.tex" 1673287843 21641 95467c3b27219cd04e1686fffc1b931c ""
+  "main.aux" 1673287849 1896 efdea1e753412798a8f37fd2fc601cdc "pdflatex"
+  "main.tex" 1673287843 21641 95467c3b27219cd04e1686fffc1b931c ""
+  "main.toc" 1673287849 1248 2fe92b4b96e1043b3b3ac3c6f32d4b1d "pdflatex"
   (generated)
   "main.aux"
   "main.auxlock"
   "main.log"
   "main.pdf"
+  "main.toc"

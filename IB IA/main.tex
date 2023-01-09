@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{pgfplots}
 \usepackage{setspace}
+\usepackage{hanging}
 \usepackage{indentfirst}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -17,7 +18,7 @@
 \setlength{\parindent}{20pt}
 
 
-\title{IB Math Analysis and Approaches Internal Assessment: \emph{Generalizing and Describing the Fibonacci Sequence}}
+\title{IB Math Analysis and Approaches Internal Assessment Higher Level: \emph{Generalizing and Describing the Fibonacci Sequence}}
 \author{Edwin Trejo Balderas}
 \date{November, 2022}
 
@@ -26,6 +27,12 @@
 \singlespacing
 
 \maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
 
 \doublespacing
 
@@ -177,15 +184,9 @@ And the following system:
 Using a python program I wrote to solve systems of equations with complex entries, I obtained the following values for $d_1,d_2,d_3$:
 \[d_1\approx0.0994,d_2\approx0.45-0.161i,d_3\approx0.45+0.161i\]
 Thus, the explicit formula for the Tribonacci Sequence is:
-<<<<<<< HEAD
 \[T_n\approx(0.0994)(1.84)^n+(0.45-0.161i)(-0.42 + 0.606i)^n+(0.45+0.161i)(-0.42 - 0.606i)^n\]
 And its limiting ratio is \[\Phi_3=\lambda_1\approx1.84\]
 To observe the behavior of each term as the index approaches infinity, we can find the magnitude of each root of the characteristic polynomial gives: 
-=======
-\[T_n\approx(0.0994)(1.84)^n+(0.45-0.161i)(-0.420 + 0.606i)^n+(0.45+0.161i)(-0.420 - 0.606i)^n\]
-And its limiting ratio is \[\Phi_3\approx1.84\]
-To observe the behavior of each term in as the index approached infinity, we can find the magnitude of each root of the characteristic polynomial gives: 
->>>>>>> 0b9ce89616aebd1b5204d2038c7ef99a811e9704
 \begin{align*}
     |\lambda_1|&\approx|1.84|=1.84 \\
     |\lambda_2|&\approx|-0.420 + 0.606i|=\sqrt{0.420^2+0.606^2}\approx 0.737\\
@@ -236,7 +237,6 @@ By (5.2), we know the sets of conjugate complex numbers present in the second an
 
 
 \section{Applying to Higher-Degree Sequences}
-<<<<<<< HEAD
 I wrote a python script that finds an explicit form for any \(m\)-nacci sequence and ran it with a few values above those we have seen so far. The 4-nacci and 5-nacci sequences are shown below. 
 \begin{align*}
     a_n^{(4)} &= (0.0410)*(1.93)^n + (0.272 - 0.174i)*(-0.0764 + 0.815i)^n + \\ &(0.272 + 0.174i)*(-0.0764 - 0.815i)^n + (0.415)*(-0.775)^n \\
@@ -263,27 +263,10 @@ By inspection, the limiting ratio of the 4-nacci sequence is \(\Phi_{4}\approx1.
 The table suggests that the limiting ratio of an \(m\)-nacci sequence approaches 2 as the degree approaches infinity, which is the relationship the initial terms shown above hint to. 
 \begin{theorem}
     The limiting ratio of an \(m\)-nacci sequence as \(m\) approaches infinity is 2. 
-    \[lim_{m\to\infty}\lim_{n\to\infty}\]
+    \[{lim_{m\to\infty}} \lim_{n\to\infty}\]
 \end{theorem}
 
-
-Indeed, we can algebraically manipulate the 
-=======
-I wrote a python script that finds an explicit form for any \(m\)-nacci sequence and used it to find an explicit form for the \(m\)-nacci sequences of degrees 4-6, which are shown below. 
-\begin{align*}
-    F^{(4)}_n & \approx 0.0410(1.93)^n + (0.272-0.174i)(-0.0764+0.815i)^n+ \\ & (0.272+0.174i)(-0.0764-0.815i)^n + 0.415(-0.775)^n \\
-    F^{(5)}_n & \approx 0.0183(1.97)^n + \\ & (0.171-0.152i)(0.195+0.849i)^n + (0.171+0.152i)(0.195-0.849i)^n + \\ & (0.320-0.0794i)(-0.678+0.459i)^n + (0.320+0.0794i)(-0.678-0.459i)^n \\
-    F^{(6)}_n & \approx 0.00857(1.98)^n + (0.112-0.127i)(0.390 + 0.818i)^n + \\ & (0.112 + 0.127i)(0.390-0.818i)^n + 0.292(-0.840)^n + \\ & (0.238-0.107i)(-0.462 + 0.719i)^n + (0.238 + 0.107i)(-0.462-0.719i)^n
-\end{align*}
-Furthermore, the limiting ratios of these sequences, given by their only positive, real exponential bases, are 
-\[\Phi_4\approx 1.93, \Phi_5\approx 1.97, \Phi_6\approx 1.98\]
-I noticed that they, in combination with the limiting ratios of the Fibonacci and Tribonacci sequences, seem to approach 2. So, I propose
-\begin{theorem}
-    The limit of an \(m\)-nacci sequence's limiting ratio as its degree approaches infinity is 2
-    \[\lim_{m\to\infty} \lim_{n\to\infty}\frac{F^{(m)}_{n+1}}{F^{(m)}_{n}}=\lim_{m\to\infty} \Phi_m = 2 \]
-\end{theorem}
->>>>>>> 0b9ce89616aebd1b5204d2038c7ef99a811e9704
-
+\emph{proof here}
 
 
 \section{Evaluation and Conclusion}
@@ -297,6 +280,14 @@ Pell sequence and other degree 2 where the first term is multuplied by an intege
 
 
 \newpage 
+
+\section{Works Cited}
+
+\begin{hangparas}{.25in}{1}
+    Geistfeld, Vinton. (2022). \emph{Sequences and Series} [Class handout]. Georgia Governor's Honors Program, Berry College.
+    
+    Weisstein, E.W. (n.d.). \emph{Descartes' Rule of Signs}. Wolfram MathWorld. https://mathworld.wolfram.com/DescartesSignRule.html
+\end{hangparas}
 
 
 \end{document}
