@@ -119,10 +119,11 @@ The method described below is one I independently developed and after going thro
     \item Solve for the roots, $r$ (this is the same as asking to solve for the roots of the characteristic polynomial), 
     \item The root that is the limiting ratio will depend on the nature of the sequence's initial terms and coefficients. Since the objects of study, \(m\)-nacci sequences, only have non-negative and real terms, the root that is the limiting ratio will be positive and real. 
 \end{enumerate}
-We use Descartes' Rule of signs to confirm that there will only ever be one positive, real root for the characteristic polynomial. Decartes' rule of signs states that the maximum number of positive real roots of a polynomial is the number of sign changes, \(n\), in its terms when counting from the highest to lowest (or lowest to highest) degree. Furthermore, it states the number of allowable roots is the number of sign changes, \(n\), minus some even number. 
-For characteristic polynomials of \(m\)-nacci sequences, we know they will always have the form: 
-\[f(\lambda)=\lambda^{k}-\lambda^{k-1}-\dots-\lambda\]
-Since all of the coefficients of an \(m\)-nacci sequence are a positive number, 1. Therefore, counting from the highest degree to the lowest degree terms, there will always be only one sign change, which will be between the highest and second-highest degree terms. So, according to the rule of signs, there is at most one positive, real root of the characteristic polynomial of an \(m\)-nacci sequence. 
+\begin{theorem}
+    The characteristic polynomial of an \(m\)-nacci sequence will always only have one positive, real root.
+\end{theorem}
+\textbf{Proof:} We use Descartes' Rule of signs to confirm that there will only ever be one positive, real root for the characteristic polynomial. Decartes' rule of signs states that the maximum number of positive real roots of a polynomial is the number of sign changes, \(n\), in its terms when counting from the highest to lowest (or lowest to highest) degree. Furthermore, it states the number of allowable roots is the number of sign changes, \(n\), minus some even number. 
+By definition, characteristic polynomials of \(m\)-nacci sequences always have only one sign change in their terms. So, according to the rule of signs, there is at most one positive, real root of the characteristic polynomial of an \(m\)-nacci sequence. 
 Furthermore, subtracting an even number from 1 greater than 0 would not make sense as there cannot be -1 positive roots to a polynomial, so there is only 1 positive, real root to a characteristic polynomial of the form above. So, the limiting ratio of an \(m\)-nacci sequence is the only positive, real root of its characteristic polynomial.
 
 
@@ -161,7 +162,7 @@ Which is indeed Binet's formula for the Fibonacci Sequence (Art of Problem Solvi
 
 \subsection{Limiting Ratio of the Fibonacci Sequence}
 The positive root of the Fibonacci sequence's characteristic polynomial is $\lambda_1=\frac{1+\sqrt{5}}{2}\approx 1.62$, which is indeed the Golden Ratio. This root has a greater magnitude than the other, $\lambda_2=\frac{1-\sqrt{5}}{2}\approx-0.618$, and thus becomes dominant as the index approaches infinity. Furthermore, the second root's magnitude is less than 1, so it and the term assoaciated with it, \(-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\), approach 0 as the index approaches infinity, which gives \(\lambda_1\) and its term, \(\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n\), more influence. THerefore, the limiting ratio of the fibonacci sequence is:
-\[\Phi^{(2)}=\lambda_1=\frac{1+sqrt{2}}{5}\approx1.62\]
+\[\Phi^{(2)}=\lambda_1=\frac{1+\sqrt{2}}{5}\approx1.62\]
 
 
 
@@ -263,10 +264,61 @@ By inspection, the limiting ratio of the 4-nacci sequence is \(\Phi_{4}\approx1.
 The table suggests that the limiting ratio of an \(m\)-nacci sequence approaches 2 as the degree approaches infinity, which is the relationship the initial terms shown above hint to. 
 \begin{theorem}
     The limiting ratio of an \(m\)-nacci sequence as \(m\) approaches infinity is 2. 
-    \[{lim_{m\to\infty}} \lim_{n\to\infty}\]
+    \[{\lim_{m\to\infty}}\ {\lim_{n\to\infty}} \frac{a^{(m)}_{n+1}}{a^{(m)}_{n}}=\lim_{m\to\infty}\Phi^{(m)}=2\]
 \end{theorem}
-
-\emph{proof here}
+\textbf{Proof:} To start, we recall the defition for the ratio between two terms in an \(m\)-nacci sequence 
+\[r=\frac{a^{(m)}_{n+1}}{a^{(m)}_n}\]
+We note that because of the ratio can be used as a successor operator, converting the \(n\)-th term to the \((n+1)\)-th term:
+\[r=\frac{a^{(m)}_{n+1}}{a^{(m)}_n}\Rightarrow r a^{(m)}_n = a^{(m)}_{n+1}\]
+Furthermore, we can use it to do the opposite, converting the \(n\)-th term to the \((n+1)\)-th term:
+\[r=\frac{a^{(m)}_{n+1}}{a^{(m)}_n}\Rightarrow r=\frac{a^{(m)}_{n}}{a^{(m)}_{n-1}}\Rightarrow \frac{a^{(m)}_{n}}{r}=a^{(m)}_{n-1}\]
+With this, we can rewrite an \(m\)-nacci sequence as:
+\begin{align*}
+    a_n^{(m)}&=a_{n-1}^{(m)}+a_{n-2}^{(m)}+\dots +a_{n-m}^{(m)} \Rightarrow\\
+    a_n^{(m)}&=\frac{a_n^{(m)}}{r}+\frac{a_n^{(m)}}{r^2}+\dots+\frac{a_n^{(m)}}{r^m}
+\end{align*}
+Which I call the reciprocal form of an \(m\)-nacci sequence. Furthermore, we divide both sides by the place-holder term, \(a_n^{(m)}\) to obtain:
+\[1=\frac{1}{r}+\frac{1}{r^2}+\dots+\frac{1}{r^m}\]
+Which I call the stripped reciprocal form of an \(m\)-nacci sequence. Note that the stripped reciprocal form of an \(m\)-nacci sequence is another way of writing its characteristic equation:
+\begin{align*}
+    1&=\frac{1}{r}+\frac{1}{r^2}+\dots+\frac{1}{r^m} \Rightarrow \\
+    r^m&=r^{m-1}+r^{m-2}+\dots+r+1 \Rightarrow \\
+    r^m&-r^{m-1}-r^{m-2}-\dots-r-1=0
+\end{align*}
+For the reciprocal form of an \(m\)-nacci sequence, taking the limit of the index as it approaches infinity then turns the ratios into the limiting ratio that corresponds with the degree of the sequence:
+\begin{align*}
+    \lim_{n\to\infty} a_n^{(m)}&=\frac{a_n^{(m)}}{r}+\frac{a_n^{(m)}}{r^2}+\dots+\frac{a_n^{(m)}}{r^m} \Rightarrow \\
+    a_n^{(m)}&=\frac{a_n^{(m)}}{\Phi^{(m)}}+\frac{a_n^{(m)}}{(\Phi^{(m)})^2}+\dots+\frac{a_n^{(m)}}{(\Phi^{(m)})^m}
+\end{align*}
+The limiting stripped reciprocal form is thus:
+\begin{align*}
+    a_n^{(m)}&=\frac{a_n^{(m)}}{\Phi^{(m)}}+\frac{a_n^{(m)}}{(\Phi^{(m)})^2}+\dots+\frac{a_n^{(m)}}{(\Phi^{(m)})^m} \Rightarrow \\
+    1&=\frac{1}{\Phi^{(m)}}+\frac{1}{(\Phi^{(m)})^2}+\dots+\frac{1}{(\Phi^{(m)})^m}
+\end{align*}
+Representing the Fibonacci sequence in its limiting stripped reciprocal form gives:
+\begin{align*}
+    a^{(2)}_n&=a^{(2)}_{n-1}+a^{(2)}_{n-2} \Rightarrow a^{(2)}_n=\frac{a^{(2)}_{n}}{r}+\frac{a^{(2)}_{n}}{r^2} \Rightarrow \\
+    \lim_{n\to\infty} a^{(2)}_n&= \frac{a^{(2)}_{n}}{r}+\frac{a^{(2)}_{n}}{r^2} \Rightarrow a^{(2)}_n= \frac{a^{(2)}_{n}}{\Phi^{(2)}}+\frac{a^{(2)}_{n}}{(\Phi^{(2)})^2} \Rightarrow \\
+    1&=\frac{1}{\Phi^{(2)}}+\frac{1}{(\Phi^{(2)})^2}
+\end{align*}
+Note that this represents a geometric sum with initial term \(\frac{1}{(\Phi^{(2)})^2}\), common ratio \(\Phi^{(2)}\), and sum 1. Using the geomtric sum formula gives:
+\begin{align*}
+    S_n&=\frac{u_1(r^n-1)}{r-1} \\
+    S_2&=1=\frac{\frac{1}{(\Phi^{(2)})^2}((\Phi^{(2)})^2-1)}{\Phi^{(2)}-1}
+\end{align*}
+Solving for \(\Phi^{(2)}\) gives:
+\begin{align*}
+    1&=\frac{\frac{1}{(\Phi^{(2)})^2}((\Phi^{(2)})^2-1)}{\Phi^{(2)}-1}=\frac{(1-\frac{1}{(\Phi^{(2)})^2})}{\Phi^{(2)}-1} \Rightarrow \\
+    \Phi^{(2)}-1&=1-\frac{1}{(\Phi^{(2)})^2} \Rightarrow \\
+    \Phi^{(2)}+\frac{1}{(\Phi^{(2)})^2}&=2
+\end{align*}
+The same process of using the limiting stripped reciprocal form of an \(m\)-nacci to solve for \(\Phi^{(m)}\) can be applied to any degree sequence, indeed:
+\begin{align*}
+    1&=\frac{1}{\Phi^{(m)}}+\frac{1}{(\Phi^{(m)})^2}+\dots+\frac{1}{(\Phi^{(m)})^m} \Rightarrow \\
+    1&=\frac{\frac{1}{(\Phi^{(m)})^m}((\Phi^{(m)})^m-1)}{\Phi^{(m)}-1}=\frac{(1-\frac{1}{(\Phi^{(m)})^m})}{\Phi^{(m)}-1} \Rightarrow \\
+    \Phi^{(m)}-1&=1-\frac{1}{(\Phi^{(m)})^m} \Rightarrow \\
+    \Phi^{(m)}+\frac{1}{(\Phi^{(m)})^m}&=2
+\end{align*}
 
 
 \section{Evaluation and Conclusion}
