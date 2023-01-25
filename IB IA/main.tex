@@ -18,9 +18,9 @@
 \setlength{\parindent}{20pt}
 
 
-\title{IB Math Analysis and Approaches Internal Assessment Higher Level: \emph{Generalizing and Describing the Fibonacci Sequence}}
+\title{IB Math Analysis and Approaches Higher Level Internal Assessment: \emph{Generalizing and Describing the Behavior of Fibonacci-like Sequences}}
 \author{Edwin Trejo Balderas}
-\date{November, 2022}
+\date{January, 2023}
 
 \begin{document}
 
@@ -124,7 +124,7 @@ The method described below is one I independently developed and after going thro
 \end{theorem}
 \textbf{Proof:} We use Descartes' Rule of signs to confirm that there will only ever be one positive, real root for the characteristic polynomial. Decartes' rule of signs states that the maximum number of positive real roots of a polynomial is the number of sign changes, \(n\), in its terms when counting from the highest to lowest (or lowest to highest) degree. Furthermore, it states the number of allowable roots is the number of sign changes, \(n\), minus some even number. 
 By definition, characteristic polynomials of \(m\)-nacci sequences always have only one sign change in their terms. So, according to the rule of signs, there is at most one positive, real root of the characteristic polynomial of an \(m\)-nacci sequence. 
-Furthermore, subtracting an even number from 1 greater than 0 would not make sense as there cannot be -1 positive roots to a polynomial, so there is only 1 positive, real root to a characteristic polynomial of the form above. So, the limiting ratio of an \(m\)-nacci sequence is the only positive, real root of its characteristic polynomial.
+Furthermore, subtracting an even number from 1 greater than 0 would not make sense as there cannot be -1 positive roots to a polynomial, so there is only 1 positive, real root to a characteristic polynomial of the form above. So, the limiting ratio of an \(m\)-nacci sequence is the only positive, real root of its characteristic polynomial. Q.E.D.
 
 
 
@@ -319,17 +319,40 @@ The same process of using the limiting stripped reciprocal form of an \(m\)-nacc
     \Phi^{(m)}-1&=1-\frac{1}{(\Phi^{(m)})^m} \Rightarrow \\
     \Phi^{(m)}+\frac{1}{(\Phi^{(m)})^m}&=2
 \end{align*}
+The solution to which for any \(m\) will give the limiting ratio of the \(m\)-nacci sequence of that degree.
+Since we know \(\Phi^{(m)}\) will always be positive and real, taking the limit:
+\[\lim_{m\to\infty}\Phi^{(m)}+\frac{1}{(\Phi^{(m)})^m}=2\]
+Gives:
+\begin{align*}
+    \lim_{m\to\infty}&\Phi^{(m)}+\frac{1}{(\Phi^{(m)})^m}=2 \Rightarrow \\
+    &\Phi^{(\infty)}+0=2 \Rightarrow \Phi^{(\infty)}=2
+\end{align*}
+Which proves (6.1), Q.E.D
+
+Which makes sense as it continues the pattern of powers of 2 being present in the first few terms of the 4-nacci and 5-nacci sequences in the beginning of section 6. 
 
 
-\section{Evaluation and Conclusion}
-In reviewing my 
+\section{Conclusion and Evaluation}
+I have defined a generalized version of the Fibonacci Sequence for which each successive term is the sum of a given number of previous terms and shown a fairly robust method of finding explicit formulas for these sequences. I have also defined the characteristic equation for linear recurrences and shown that, for \(m\)-nacci sequences, the ratio that terms approach is the only positive, real root of its characteristic polynomial. 
+These ratios can also be found for any given \(m\)-nacci sequence by solving the following equation for \(\Phi^{(m)}\):
+\[\Phi^{(m)}+\frac{1}{(\Phi^{(m)})^m}=2\]
+This expression also helps prove that the limiting ratio as the degree of the \(m-nacci\) sequence approaches infinity approaches 2.
+
+Unfortunately, there is little rigorous evidence to prove the efficacy of the methods I have developed, as they are for the most part driven by intuition. Furthermore, there is no definitive proof of the existance and uniqueness of the limiting ratio of the generalized \(m\)-nacci sequences. The lack of proof for both the eficacy of my methods and existence of the limiting ratios does imply that my final conclusion is true, only if the afforementioned aspects are true. 
 
 \section{Avenues for Future Research}
-    I have determined three main paths I can take with my future research relating to this paper, the first of which is making improvements to my existing methods. For example, I could attempt to show that the only root of the characteristic polynomial for an \(m\)-nacci sequence that has a magnitude greater than 1 is its positive real root, and that all other roots have a magnitude less than 1. This would prove definitively that, for all degrees, the positive, real root of the characteristic polynomial for an \(m\)-nacci sequence will become dominant over the other roots and thus become the limiting ratio. Another improvement I could make is to 
-Pell sequence and other degree 2 where the first term is multuplied by an integer 
+    I have determined two main paths I can take with my future research relating to this paper, the first of which is making improvements to my existing methods. For example, I could attempt to show that the only root of the characteristic polynomial for an \(m\)-nacci sequence that has a magnitude greater than 1 is its positive real root, and that all other roots have a magnitude less than 1. This would prove definitively that, for all degrees, the positive, real root of the characteristic polynomial for an \(m\)-nacci sequence will become dominant over the other roots and thus become the limiting ratio. 
+Another improvement I could make is to attempt to find a way to eliminate the need for complex numbers in the explicit formulas of linear recurrences whose characterisitc equations have complex roots, similar to the use of Euler's formula to deal with the existence of complex roots of the characteristice equation for linear homogenous differencial equations. 
+Finding a method to represent the explicit form of a linear recurrence with only real numbers would also make it easier to prove more rigorously the existance and uniqueness of the limiting ratio of \(m\)-nacci sequences and linear recurrences in general, and an improved method of finding them, such as how de Spindel (n.d.) does so for the general second degree linear recurrence:
+\[a_n=pa_{n-1}+qa_{n-2}; p,q\in\mbox{\textbf{R}}^+\]
+
+The other path is to apply methods of discrete calculus to linear recurrences, such as the finite difference, to observe what properties arise, perhaps finding more analogs between linear recurrences and linear homogenous differential equations.
 
 \section{Reflection}
+Overall, the process of this papaer taught me much about the nature and process of more rigorous mathematical research. I learned how to become more comfortable developing my own definitions and exploring them to see what properties arise, such as the fact that the the characteristic polynomials of the \(m\)-nacci sequences I defined will always only have on positive, real root. I also learned how to take advantage of the properties of my own definitions in my proofs, such as when I took the limit to infinity of the reciprocal form of an \(m\)-nacci sequence to obtain the limiting stripped reciprocal form, for which I could then treat the limiting ratio as a constant to solve for. 
+Another aspect of mathematical research I observed was the great risk associated with making assumptions. Without solid evicence, ideally a proof, to back up an assumption, any conclusions determined using that assumption cannot be taken to be true. I find this does not discount the value of the conclusion, but rather adds motivation at proving its condition, which would reveal two conclusions at once\dots
 
+I also learned more about the continuity of mathematical research. There were many other aspects of mathematics, such as using matrices to represent linear recurrences and finding their eigenvalues and eigenvectors to determine the limiting ratios of the linear recurrence, that I considered incorporating but did not have the space to do so. The paper answered many questions, but made me consider new ones, some of which are discussed in Section 8, which I hope to pursue in my independent research.
 
 \newpage 
 
@@ -339,6 +362,8 @@ Pell sequence and other degree 2 where the first term is multuplied by an intege
     Art of Problem Solving (n.d.) Binet's Formula. \\ https://artofproblemsolving.com/wiki/index.php/Binet\%27s\_Formula
 
     Bozlee, S. (2017, January 19). Solutions Sets of Recurrence Relations. Math.colorado.edu. \\ http://math.colorado.edu/~sebo2151/notes/rec.pdf
+
+    de Spinadel, V.W. (n.d.). The Family of Metallic Means. Mathematical Institute of the Serbian Academy of Sciences and Arts. \\ http://www.mi.sanu.ac.rs/vismath/spinadel/
 
     Geistfeld, V. (2022). \emph{Sequences and Series} [Class handout]. Georgia Governor's Honors Program, Berry College.
     
