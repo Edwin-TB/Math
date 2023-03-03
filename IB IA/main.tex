@@ -7,6 +7,11 @@
 \usepackage{hanging}
 \usepackage{indentfirst}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -19,22 +24,23 @@
 
 
 \title{IB Math Analysis and Approaches Higher Level Internal Assessment: \emph{Generalizing and Describing the Behavior of Fibonacci-like Sequences}}
-\author{Edwin Trejo Balderas}
-\date{January, 2023}
 
 \begin{document}
 
-\singlespacing
-
-\maketitle
-
-\newpage
-
-\tableofcontents
-
-\newpage
-
 \doublespacing
+\thispagestyle{empty}
+
+\begin{center}
+{\huge Generalizing and Describing the Behavior of Fibonacci-like Sequences} 
+\end{center}
+
+\begin{center}
+17 Pages
+\end{center}
+
+\newpage
+
+\setcounter{page}{1}
 
 \section{Introduction and Rationale}
 
@@ -44,31 +50,31 @@ This past summer, my mathematical abilities developed greatly and I learned how 
 
 \section{Aim and Methodology}
 
-In this investigation, I aim to determine the behavior of generalized m-nacci sequences by finding the ratios they approach, which I will call their '\textbf{limiting ratio}’ as the index of the sequence approaches infinity and finding explicit formulas for their recursive relationships. I will first investigate these properties of the fibonacci sequence, using algebra to show that its limiting ratio is indeed the golden ratio and methods similar to those used to find solutions of homogeneous differential equations to find Binet’s Formula. I will then define n-nacci sequences and try to extend methods to these new sequences. I will use computer code to simplify the process of finding explicit formulas and generating high indexes of these formulas to postulate their limiting ratios. I will then use geometric sum formulas to prove these ratios, and derive the ratio that appears when infinitely many previous terms are added. 
+In this investigation, I aim to determine the behavior of generalized m-nacci sequences by finding the ratios they approach, which I will call their '\textbf{limiting ratio}’ as the index of the sequence approaches infinity and finding explicit formulas for their recursive relationships. I will first investigate these properties of the fibonacci sequence, using algebra to show that its limiting ratio is indeed the golden ratio and methods similar to those used to find solutions of homogeneous differential equations to find Binet’s Formula. I will then define \(m\)-nacci sequences and try to extend methods to these new sequences. I will use computer code to simplify the process of finding explicit formulas and generating high indexes of these formulas to postulate their limiting ratios. I will then use geometric sum formulas to prove these ratios, and derive the ratio that appears when infinitely many previous terms are added. 
 
 
 \section{Relevant Mathematical Background}
 A few fundamental definitions are given below. (3.1) and (3.2) come from Bozlee (2017), and (3.3) and (3.4) comes from a course in sequences and series I took over the summer before my senior year (Geistfeld, 2022). (3.5) and (3.6) are self-developed.
 
-\begin{definition}[Linear Homogenous Recurrence Relation] A linear homogenous recurrence relation (which I will call a \textbf{linear recurrence}) of degree \mbox{k}, is a recurrence relation of the form:
-    $$a_n=c_1a_{n-1}+c_2a_{n-2}+\dots +c_ka_{n-k}; c_1,c_2,\dots,c_k\in \mbox{\textbf{C}}$$ 
+\begin{definition}[Linear Homogenous Recurrence Relation] A linear homogenous recurrence relation (which I will call a \textbf{linear recurrence}) of degree \mbox{m}, is a recurrence relation of the form:
+    $$a_n=c_1a_{n-1}+c_2a_{n-2}+\dots +c_ma_{n-m}; c_1,c_2,\dots,c_m\in \mbox{\textbf{C}}$$ 
     With initial terms: 
-    $$a_1,a_2,\dots,a_k\in\mbox{\textbf{C}}$$
+    $$a_1,a_2,\dots,a_m\in\mbox{\textbf{C}}$$
 \end{definition}
 
-\begin{definition}[Characteristic Polynomial] The characteristic polynomial of a linear recurrence is a polynomial of the form:
-    $$f(\lambda) = \lambda^{k}-c_1\lambda^{k-1}-c_2\lambda^{k-2}-\dots-c_{k-1}\lambda-c_k$$ 
+\begin{definition}[Characteristic Polynomial] The characteristic polynomial of a linear recurrence of degree \(m\) is a polynomial of the form:
+    $$f(\lambda) = \lambda^{m}-c_1\lambda^{m-1}-c_2\lambda^{m-2}-\dots-c_{m-1}\lambda-c_m$$ 
 \end{definition}
 
-\begin{definition}[Explicit Form] The explicit form of a linear recurrence is an expression of the form:
-    $$a_n=d_1\lambda_1^n+d_2\lambda_2^n+\dots+d_k\lambda_k^n; d_1,d_2,\dots,d_k \in\mbox{\textbf{C}}$$ 
-    Where \mbox{$\lambda_1,\lambda_2,\dots,\lambda_k$} are the roots of the characteristic polynomial
+\begin{definition}[Explicit Form] The explicit form of a linear recurrence is a function of the form:
+    $$a_n=d_1\lambda_1^n+d_2\lambda_2^n+\dots+d_m\lambda_m^n; d_1,d_2,\dots,d_m \in\mbox{\textbf{C}}$$ 
+    Where \mbox{$\lambda_1,\lambda_2,\dots,\lambda_m$} are the roots of the characteristic polynomial. Further, for all \(n\in \mbox{\textbf{Z}}^+\), the explicit form of a linear recurrence returns the linear recurrence at that value.
 \end{definition}
 
 \begin{definition}[Ratio] The ratio between terms of a linear recurrence, $a_n$, is:
     $$r=\frac{a_{n+1}}{a_{n}}$$
     Note that the ratio can also be used as a successor operator to give the next term in a recurrence 
-    $$r=\frac{a_{n+1}}{a_{n}}\Rightarrow r a_n=a_{n+1}\Rightarrow r^k a_n=a_{n+k}$$
+    $$r=\frac{a_{n+1}}{a_{n}}\Rightarrow r a_n=a_{n+1}\Rightarrow r^m a_n=a_{n+m}$$
 \end{definition}
 
 \begin{definition}[Limiting Ratio] The limiting ratio of a linear recurrence, $a_n$, is the limit of its ratio as its index approaches $\infty$:
@@ -84,21 +90,21 @@ A few fundamental definitions are given below. (3.1) and (3.2) come from Bozlee 
 \end{definition}
 
 \subsection{Method for Deriving the Explicit Formula of a Linear Recurrence}
-The method I learned for deriving the explicit formula of a general linear recurrence, $a_n$, of degree \(k\) with initial terms, \(a_1,\dots,a_k\), is outlined below (Geistfeld, 2022).
+The method I learned for deriving the explicit formula of a general linear recurrence, $a_n$, of degree \(m\) with initial terms, \(a_1,\dots,a_m\), is outlined below (Geistfeld, 2022).
 \begin{enumerate}
     \item Determine the characteristic polynomial of $a_n$, $f(\lambda)$
-    \item Determine the roots of $f(\lambda)$: $\lambda_1,\lambda_2,\dots,\lambda_k$
+    \item Determine the roots of $f(\lambda)$: $\lambda_1,\lambda_2,\dots,\lambda_m$
     \item Use the roots of $f(\lambda)$ as the bases of the explicit form of $a_n$
-    \[a_n = d_1\lambda_1^n+d_2\lambda_2^n+\dots+d_k\lambda_k^n\]
+    \[a_n = d_1\lambda_1^n+d_2\lambda_2^n+\dots+d_m\lambda_m^n\]
     \item Use the initial terms of $a_n$ to setup a system of equations
     \begin{align*}
-        a_1 &= d_1\lambda_1^1+d_2\lambda_2^1+\dots+d_k\lambda_k^1 \\
-        a_2 &= d_1\lambda_1^2+d_2\lambda_2^2+\dots+d_k\lambda_k^2 \\
+        a_1 &= d_1\lambda_1^1+d_2\lambda_2^1+\dots+d_m\lambda_m^1 \\
+        a_2 &= d_1\lambda_1^2+d_2\lambda_2^2+\dots+d_m\lambda_m^2 \\
         &\vdots \\ 
-        a_k &= d_1\lambda_1^k+d_2\lambda_2^k+\dots+d_k\lambda_k^k
+        a_m &= d_1\lambda_1^m+d_2\lambda_2^m+\dots+d_m\lambda_m^m
     \end{align*}
 
-    \item Solve the system for the coefficients $d_1,d_2,\dots,d_k$ and use them in the explicit form
+    \item Solve the system for the coefficients $d_1,d_2,\dots,d_m$ and use them in the explicit form
 \end{enumerate}
 
 \subsection{Method for Deriving the Limiting Ratio of a Linear Recurrence}
@@ -106,14 +112,14 @@ The method described below is one I independently developed and after going thro
 \begin{enumerate}
     \item Express $a_n$ in terms of its lowest-index term and powers of its ratio 
     \begin{align*}
-        a_n=c_1a_{n-1}+c_2a_{n-2}+\dots +c_ka_{n-k} \\
-        a_{n+k}=c_1a_{n+k-1}+c_2a_{n+k-2}+\dots +c_ka_{n} \\
-        r^{k}a_{n}=c_1r^{k-1}a_{n}+c_2r^{k-2}a_{n-2}+\dots +c_ka_{n} \\
+        a_n=c_1a_{n-1}+c_2a_{n-2}+\dots +c_ma_{n-m} \\
+        a_{n+m}=c_1a_{n+m-1}+c_2a_{n+m-2}+\dots +c_ma_{n} \\
+        r^{m}a_{n}=c_1r^{m-1}a_{n}+c_2r^{m-2}a_{n-2}+\dots +c_ma_{n} \\
     \end{align*}
     \item Factor out $a_n$ and set the expression equal to 0
     \begin{align*}
-        r^{k}=c_1r^{k-1}+c_2r^{k-2}+\dots +c_k \\
-        r^{k}-c_1r^{k-1}-c_2r^{k-2}-\dots -c_k=0
+        r^{m}=c_1r^{m-1}+c_2r^{m-2}+\dots +c_m \\
+        r^{m}-c_1r^{m-1}-c_2r^{m-2}-\dots -c_m=0
     \end{align*}
     Note how this is analagous to the characteristic polynomial of $a_n$, \(f(\lambda)\)
     \item Solve for the roots, $r$ (this is the same as asking to solve for the roots of the characteristic polynomial), 
@@ -174,10 +180,10 @@ With characteirstic polynomial:
 and roots
 \[\lambda_1 \approx 1.84, \lambda_2 \approx -0.420 + 0.606i, \lambda_3 \approx -0.420 - 0.606i\]
 Which gives the explicit form
-\[T_n=d_1(1.84)^n+d_2(-0.420 + 0.606i)^n+d_3(-0.420 - 0.606i)^n\]
+\[T_n\approx_1(1.84)^n+d_2(-0.420 + 0.606i)^n+d_3(-0.420 - 0.606i)^n\]
 And the following system:
 \begin{align*}
-    T_0=0=d_1(1.84)^0+d_2(-0.420 + 0.606i)^0+d_3(-0.420 - 0.606i)^0 \\
+    T_0=0d_1(1.84)^0+d_2(-0.420 + 0.606i)^0+d_3(-0.420 - 0.606i)^0 \\
     T_1=0=d_1(1.84)^1+d_2(-0.420 + 0.606i)^1+d_3(-0.420 - 0.606i)^1 \\
     T_2=1=d_1(1.84)^2+d_2(-0.420 + 0.606i)^2+d_3(-0.420 - 0.606i)^2
 \end{align*}
@@ -336,7 +342,7 @@ Which makes sense as it continues the pattern of powers of 2 being present in th
 I have defined a generalized version of the Fibonacci Sequence for which each successive term is the sum of a given number of previous terms and shown a fairly robust method of finding explicit formulas for these sequences. I have also defined the characteristic equation for linear recurrences and shown that, for \(m\)-nacci sequences, the ratio that terms approach is the only positive, real root of its characteristic polynomial. 
 These ratios can also be found for any given \(m\)-nacci sequence by solving the following equation for \(\Phi^{(m)}\):
 \[\Phi^{(m)}+\frac{1}{(\Phi^{(m)})^m}=2\]
-This expression also helps prove that the limiting ratio as the degree of the \(m-nacci\) sequence approaches infinity approaches 2.
+This expression also helps prove that the limiting ratio as the degree of the \(m\)-nacci sequence approaches infinity approaches 2.
 
 Unfortunately, there is little rigorous evidence to prove the efficacy of the methods I have developed, as they are for the most part driven by intuition. Furthermore, there is no definitive proof of the existance and uniqueness of the limiting ratio of the generalized \(m\)-nacci sequences. The lack of proof for both the eficacy of my methods and existence of the limiting ratios does imply that my final conclusion is true, only if the afforementioned aspects are true. 
 
@@ -350,11 +356,13 @@ The other path is to apply methods of discrete calculus to linear recurrences, s
 
 \section{Reflection}
 Overall, the process of this papaer taught me much about the nature and process of more rigorous mathematical research. I learned how to become more comfortable developing my own definitions and exploring them to see what properties arise, such as the fact that the the characteristic polynomials of the \(m\)-nacci sequences I defined will always only have on positive, real root. I also learned how to take advantage of the properties of my own definitions in my proofs, such as when I took the limit to infinity of the reciprocal form of an \(m\)-nacci sequence to obtain the limiting stripped reciprocal form, for which I could then treat the limiting ratio as a constant to solve for. 
-Another aspect of mathematical research I observed was the great risk associated with making assumptions. Without solid evicence, ideally a proof, to back up an assumption, any conclusions determined using that assumption cannot be taken to be true. I find this does not discount the value of the conclusion, but rather adds motivation at proving its condition, which would reveal two conclusions at once\dots
+Another aspect of mathematical research I observed was the great care needed in making assumptions. Without solid evicence, ideally a proof, to back up an assumption, any conclusions determined using that assumption cannot be taken to be true in all cases. I find this does not discount the value of the conclusion, but rather adds motivation at proving its condition, which would reveal two conclusions at once.
 
-I also learned more about the continuity of mathematical research. There were many other aspects of mathematics, such as using matrices to represent linear recurrences and finding their eigenvalues and eigenvectors to determine the limiting ratios of the linear recurrence, that I considered incorporating but did not have the space to do so. The paper answered many questions, but made me consider new ones, some of which are discussed in Section 8, which I hope to pursue in my independent research.
+I also learned more about the continuity of mathematical research. The paper answered many questions, but made me consider new ones, some of which are discussed in Section 8, which I hope to pursue in my independent research. There were many other aspects of mathematics that I considered incorporating but did not have the space to do so. Something particularly interesting to me is attempting to use matrices to represent systems generated by a linear recurrence, and finding their eigenvalues and eigenvectors to determine the limiting ratios of the linear recurrence or other long-term behaviors.
+Regarding other perspectives, there is no debate over the validity of my methods and conclusions; Wolfram (1997) agrees that the limiting ratio of \(m\)-nacci sequences are the real roots of characteristic equations with coefficients of 1. 
 
 \newpage 
+\thispagestyle{empty}
 
 \section{Works Cited}
 
@@ -368,6 +376,8 @@ I also learned more about the continuity of mathematical research. There were ma
     Geistfeld, V. (2022). \emph{Sequences and Series} [Class handout]. Georgia Governor's Honors Program, Berry College.
     
     Weisstein, E.W. (n.d.). \emph{Descartes' Rule of Signs}. Wolfram MathWorld. \\ https://mathworld.wolfram.com/DescartesSignRule.html
+
+    Wolfram, D.A. (1997). SOLVING GENERALIZED FIBONACCI RECURRENCES. Department of Computer Science, The Australian National University. \\ https://www.fq.math.ca/Scanned/36-2/wolfram.pdf
 \end{hangparas}
 
 
