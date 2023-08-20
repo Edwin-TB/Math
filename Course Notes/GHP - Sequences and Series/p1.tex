@@ -1,14 +1,14 @@
 \section{Sequences}
 An arithmetic sequence is a list of integers which can be represented by the formula:
-\[a_n = a_1 + (n - 1)d\] Where \(a_1\), \(d\) \(\in\) \(\mathbb{Z}\) and \(n\) \(\in\) \(\mathbb{Z}^+\)
+\[a_n = a_1 + (n - 1)d\] Where \(a_1\), \(d \in \mbox{Z}\) and \(n\) \(\in\) \(\mbox{Z}^+\)
 \newline
-Arithmetic sequences can also be represented by a function, \(f(x)\), where \(x\in\mathbb{Z}\)
+Arithmetic sequences can also be represented by a function, \(f(x)\), where \(x\in\mbox{Z}\)
 
 \section{Sequences and the Finite Difference}
-For a sequence represented by \(f(x)\) where \(x \in \mathbb{Z}^+\) and the first few terms are \[f(1), f(2), f(3), ...\]
+For a sequence represented by \(f(x)\) where \(x \in \mbox{Z}^+\) and the first few terms are \[f(1), f(2), f(3), ...\]
 The difference between the first two terms is given by \[f(2) - f(1)\] 
 Similarly, the difference between the second pair of terms is given by \[f(3) - f(2)\]
-More generally, the \textbf{finite difference} of a sequence, \(f(x), x \in \mathbb{Z}^+\) is defined as
+More generally, the \textbf{finite difference} of a sequence, \(f(x), x \in \mbox{Z}^+\) is defined as
 \begin{equation} \label{eq:1}
     \Delta f(x) = f(x + 1) - f(x)
 \end{equation}
@@ -40,7 +40,7 @@ In essence, the finite difference can be viewed as a more discrete version of th
 \section{Falling Exponents}
 Another important concept in this subject is falling exponents. A falling exponent is defined as:
 \begin{equation}\label{eq:3}
-    a^{\underline{n}} = a(a-1)(a-2...(a-(n-1)))
+    a^{\underline{n}} = a(a-1)(a-2)...(a-(n-1)) = \prod_{i=0}^{n-1} (a-i)
 \end{equation}
 Notice how when \(a=n\), the falling exponent causes all integers from 1 to \(a\) to be multiplied together, which is equivalent to applying the factorial to \(a\)
 \[a! = a^{\underline{a}}\]

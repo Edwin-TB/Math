@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+
+\title{61DM HW 1 Problem 1}
+\author{Edwin Trejo}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem}
+ Use the principle of mathematical induction to check that 
+    \[\sum_{j=1}^{n}j^3=\frac{n^{2}(n+1)^2}{4}, n\in \mbox{\textbf{Z}}^+\]
+
+\section{Solution}
+First, we ensure the proposition is true for \(n=1\):
+\[\sum_{j=1}^{1}j^3=1^3=1\]
+\[\frac{1^{2}(1+1)^2}{4}=\frac{4}{4}=1\]
+\[1=1\]
+So, the proposition holds for \(n=1\). Next, we assume the proposition is true for all \(n=k\):
+\[\sum_{j=1}^{k}j^3=\frac{k^{2}(k+1)^2}{4}, k\in \mbox{\textbf{Z}}^+\]
+Now, we show the proposition is true for all \(n=k+1\), that is:
+\[\sum_{j=1}^{k+1}j^3=\frac{(k+1)^{2}(k+2)^2}{4}, k\in \mbox{\textbf{Z}}^+\]
+Beginning with the left-hand side:
+\begin{align*}
+    \sum_{j=1}^{k+1}j^3 &= \sum_{j=1}^{k}j^3 + (k+1)^3 \\
+    &= \frac{k^{2}(k+1)^2}{4} + (k+1)^3 \ \ \ \ [\mbox{by assumption}] \\
+    &= \frac{k^{2}(k+1)^2}{4} + \frac{4(k+1)(k+1)^2}{4} \\
+    &= \frac{k^{2}(k+1)^2 + 4(k+1)(k+1)^2}{4} \\ 
+    &= \frac{(k+1)^2(k^2+4k+4)}{4} \\
+    &= \frac{(k+1)^2(k+2)^2}{4} \\
+\end{align*}
+Which is equal to the right-hand side. Therefore, since the proposition holds for \(n=1\) and all \(n=k+1\), it is true for all \(n\in\mbox{\textbf{Z}}^+\)
+
+\end{document}
